@@ -1,4 +1,5 @@
 import { Manrope } from '@next/font/google';
+import Script from 'next/script';
 
 import { Box } from '~/components/box';
 import { Link } from '~/components/link';
@@ -52,6 +53,19 @@ export default function RootLayout({
         </nav>
         {children}
       </Box>
+      <Script
+        strategy="afterInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=G-7XXK5WVPW1"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-7XXK5WVPW1');
+        `}
+      </Script>
     </html>
   );
 }
