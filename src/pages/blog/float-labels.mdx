@@ -1,0 +1,77 @@
+import { BlogImage } from '~/components/blog-image';
+import Head from 'next/head';
+
+<Head>
+  <title>Josh Ferrell | The problem with float labels</title>
+</Head>
+
+# The problem with float labels
+
+<BlogImage
+  src="https://cdn.dribbble.com/users/6410/screenshots/1254439/form-animation-_gif_.gif"
+  alt="The float label form interaction by Matt D Smith"
+/>
+
+The float label was introduced as a new type of form interaction pattern by Matt D Smith. The design pattern quickly gained popularity and became widely used in web, but was mostly used in mobile designs.
+
+Prior to the float label design, form inputs typically displayed the label above or beside the input field. The thinking was that putting labels to the left or above the input took up valuable real-estate and made it more difficult for users to remember what information is required for the form.
+
+The float label intended to solve those problems by displaying the label inside the input field, and animating it to "float" above the input field when the user types in it or focuses on it.
+
+## Adoption by Google
+
+<BlogImage
+  src="https://res.cloudinary.com/practicaldev/image/fetch/s--3YnB3_cj--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/xvp5hv3imi3t5em6e4yi.png"
+  alt="The original float label that material UI implemented with labels as placeholders and bars underneath the inputs"
+/>
+
+In 2014, Google adopted the float label pattern for the Material Design language. Their goal was to "mimic the feel of pen and paper." At a time where Apple was pushing for [skeuomorphism](https://www.interaction-design.org/literature/topics/skeuomorphism) and Microsoft was making everything flat squares, Google found a happy medium.
+
+Looking at the design of the form, it's clear where its inspiration came from. When filling out a form physically, there is a line that you write in. Boxes aren't used because, well people's handwriting suck.
+
+The design of the form seems simple, but are there any issues with it?
+
+## The issues
+
+### Placeholders
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/jrigp2L-P-0?start=91"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen
+></iframe>
+
+Nielsen Norman has done [some research](https://www.nngroup.com/articles/form-design-placeholders/) on issues they have found with
+placeholders and form inputs. While float labels solve the issue of dissapearing labels when people used to rely _only_ on placeholders
+as their label, they still look like input filled in when doing a quick scan of a form.
+
+The other issue Nielsen Norman found is that inputs can sometimes look like data that was pre-filled, like a billing address being auto-populated because the shipping address is the same.
+
+### No good space for hint text
+
+Libraries that use float labels typically have the help text appear in different ways. Some place them as tooltips next to the label. Material, puts them underneath the form input. Both of these solutions are problematic. Tooltips as help text is a strange experience and should be avoided. Tooltips should be keyboard accessible and having to tab into a tooltip breaks up the float of filling out information. If you're including information that helps users to fill out the form, let them see it!
+
+Material and a few others place their help text under the input. However, this [can be problematic](https://adrianroselli.com/2017/01/avoid-messages-under-fields.html). What typically happens when an error message appears is that the help text gets replaced with the error message. What happens if you don't enter anything into the input? The error message might say, "Enter your phone number," but what's the format of the phone number needed? The other issue brought up by Adrian Roselli is that the help text also gets covered by autocomplete.
+
+## No appropriately sized inputs
+
+Appropriately sized inputs give users an affordance that only a certain number of characters are required to enter, for example, a zip code field that has a small width fitting 5 characters. In the case of float labels, we need to size the field to 8 characters, or possibly more, to work with the width of the label.
+
+<BlogImage
+  src="https://pbs.twimg.com/media/FVauKa8UcAA0jPW?format=png&name=240x240"
+  alt="Form with inputs of zip code with label slightly overflowing when in a non-floating state."
+/>
+
+## Conclusion
+
+While the float label design pattern has become widely sused and popular in web and mobile design, it isn't without its problems. While these issues may not be considered to be deal breakers for some, it's important to be aware of the issues that may come up with using them.
+
+## Special Thanks
+
+- [Adam Silver](https://adamsilver.io/)
+- [Adrian Roselli](https://adrianroselli.com/)
+- [Katie Sherwin](https://www.nngroup.com/articles/author/katie-sherwin/)

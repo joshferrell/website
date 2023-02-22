@@ -1,0 +1,15 @@
+
+.main {
+    max-width: 40.5rem;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+    background-color: var(--background-background);
+
+    @media screen and (min-width: 810px) {
+        margin: 6rem auto;
+    }
+
+    @media screen and (min-width: 1438px) {
+        margin: 10rem auto;
+    }
+}
