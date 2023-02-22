@@ -38,6 +38,7 @@ export default function RootLayout({
               alignItems: 'center',
               justifyContent: 'center',
               gap: '1.8rem',
+              flexWrap: 'wrap',
               listStyleType: 'none',
               padding: '1.5rem',
             }}
