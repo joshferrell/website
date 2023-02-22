@@ -1,5 +1,5 @@
 import { Manrope } from '@next/font/google';
-import Script from 'next/script';
+import { Analytics } from '@vercel/analytics/react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { MDXProvider } from '@mdx-js/react';
@@ -136,19 +136,7 @@ export default function RootLayout({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
         </BlogPage>
       </MDXProvider>
-      <Script
-        strategy="afterInteractive"
-        src="https://www.googletagmanager.com/gtag/js?id=G-7XXK5WVPW1"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-7XXK5WVPW1');
-        `}
-      </Script>
+      <Analytics />
     </Box>
   );
 }
