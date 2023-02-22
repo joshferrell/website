@@ -10,6 +10,8 @@ import { Link } from '~/components/link';
 import { BlogPage } from '~/components/container';
 import '../app/globals.scss';
 
+// TODO: see if you can fully migrate to /app directory for less repeat.
+
 const manrope = Manrope({
   weight: 'variable',
   subsets: ['latin'],
@@ -116,6 +118,7 @@ export default function RootLayout({ Component, pageProps }: AppProps) {
             alignItems: 'center',
             justifyContent: 'center',
             gap: '1.8rem',
+            flexWrap: 'wrap',
             listStyleType: 'none',
             padding: '1.5rem',
           }}
