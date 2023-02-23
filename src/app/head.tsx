@@ -1,28 +1,8 @@
 export default function Head() {
   return (
     <>
-      <title>Joshua Ferrell</title>
       <meta charSet="utf-8" />
       <meta content="width=device-width, initial-scale=1" name="viewport" />
-
-      {/* SEO Stuff */}
-      <meta
-        name="description"
-        content="Joshua Ferrell, Staff Software Engineer specializing in frontend software development. Follow blog for design system and Javascript news."
-      />
-      <meta
-        name="keywords"
-        content="Design Systems, React, Software Engineer, Typescript, Javascript"
-      />
-
-      {/* Twitter stuff */}
-      <meta name="twitter:creator" content="@norablindsided" />
-      <meta name="twitter:site" content="@norablindsided" />
-      <meta name="twitter:title" content="Joshua Ferrell" />
-      <meta
-        name="twitter:description"
-        content="Come see how Josh Ferrell can transform your business and increase developer productivity."
-      />
 
       <link
         rel="apple-touch-icon"

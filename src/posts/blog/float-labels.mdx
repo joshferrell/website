@@ -1,16 +1,11 @@
-import { BlogImage } from '~/components/blog-image';
-import Head from 'next/head';
-
-<Head>
-  <title>Josh Ferrell | The problem with float labels</title>
-</Head>
-
-# The problem with float labels
-
-<BlogImage
-  src="https://cdn.dribbble.com/users/6410/screenshots/1254439/form-animation-_gif_.gif"
-  alt="The float label form interaction by Matt D Smith"
-/>
+---
+title: The problem with float labels
+date: 2023-02-22
+category: Web Design
+image: /blog-photos/float-label.webp
+imageAlt: The float label form interaction by Matt D Smith
+summary: An analysis of the float label web design pattern and when to use.
+---
 
 The float label was introduced as a new type of form interaction pattern by Matt D Smith. The design pattern quickly gained popularity and became widely used in web, but was mostly used in mobile designs.
 
@@ -20,10 +15,7 @@ The float label intended to solve those problems by displaying the label inside 
 
 ## Adoption by Google
 
-<BlogImage
-  src="https://res.cloudinary.com/practicaldev/image/fetch/s--3YnB3_cj--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/xvp5hv3imi3t5em6e4yi.png"
-  alt="The original float label that material UI implemented with labels as placeholders and bars underneath the inputs"
-/>
+![The original float label that material UI implemented with labels as placeholders and bars underneath the inputs](https://res.cloudinary.com/practicaldev/image/fetch/s--3YnB3_cj--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/xvp5hv3imi3t5em6e4yi.png)
 
 In 2014, Google adopted the float label pattern for the Material Design language. Their goal was to "mimic the feel of pen and paper." At a time where Apple was pushing for [skeuomorphism](https://www.interaction-design.org/literature/topics/skeuomorphism) and Microsoft was making everything flat squares, Google found a happy medium.
 
@@ -61,10 +53,7 @@ Material and a few others place their help text under the input. However, this [
 
 Appropriately sized inputs give users an affordance that only a certain number of characters are required to enter, for example, a zip code field that has a small width fitting 5 characters. In the case of float labels, we need to size the field to 8 characters, or possibly more, to work with the width of the label.
 
-<BlogImage
-  src="https://pbs.twimg.com/media/FVauKa8UcAA0jPW?format=png&name=240x240"
-  alt="Form with inputs of zip code with label slightly overflowing when in a non-floating state."
-/>
+![Form with inputs of zip code with label slightly overflowing when in a non-floating state](https://pbs.twimg.com/media/FVauKa8UcAA0jPW?format=png&name=240x240)
 
 ## Conclusion
 

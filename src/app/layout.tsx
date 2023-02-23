@@ -1,5 +1,6 @@
 import { Manrope } from '@next/font/google';
 import Script from 'next/script';
+import type { Metadata } from 'next';
 
 import { Box } from '~/components/box';
 import { Link } from '~/components/link';
@@ -9,6 +10,39 @@ const manrope = Manrope({
   weight: 'variable',
   subsets: ['latin'],
 });
+
+export const metadata: Metadata = {
+  title: 'Josh Ferrell',
+  description:
+    'Josh Ferrell, Staff Software Engineer specializing in frontend software development. Follow blog for design system and Javscript news',
+  keywords: 'Design Systems, React, Software Engineer, Typescript, Javascript',
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Joshua Ferrell',
+    creator: '@norablindsided',
+    site: '@norablindsided',
+    images: {
+      url: 'https://www.joshferrell.me/twitter-image.png',
+      alt: 'Josh Ferrell, staff software engineer',
+    },
+  },
+  openGraph: {
+    title: 'Josh Ferrell',
+    description:
+      'Josh Ferrell, staff software engineer specializing in frontend software development. Follow blog for design and Javascript news',
+    url: 'https://joshferrell.me',
+    siteName: 'Josh Ferrell',
+    images: [
+      {
+        url: 'https://www.joshferrell.me/facebook-image.png',
+        width: 1080,
+        height: 1080,
+      },
+    ],
+    locale: 'en-US',
+    type: 'website',
+  },
+};
 
 export default function RootLayout({
   children,

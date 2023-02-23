@@ -1,17 +1,11 @@
+const { withContentlayer } = require('next-contentlayer');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
+  pageExtensions: ['ts', 'tsx'],
   experimental: {
     appDir: true,
   },
-}
+};
 
-const withMDX = require('@next/mdx')({
-  extension: /\.mdx?$/,
-  options: {
-    remarkPlugins: [],
-    rehypePlugins: []
-  }
-});
-
-module.exports = withMDX(nextConfig);
+module.exports = withContentlayer(nextConfig);
