@@ -21,7 +21,7 @@ export const generateMetadata = ({ params }: PropTypes): Metadata => {
 
   const imageUrl = blog.image.includes('https://')
     ? blog.image
-    : `https://joshferrell.me${blog.image}`;
+    : `https://joshferrell.me${blog.image.replace('.webp', '.png')}`;
 
   return {
     title: `Josh Ferrell | ${blog.title}`,
