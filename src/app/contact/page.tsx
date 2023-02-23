@@ -32,7 +32,10 @@ const Contact = () => {
         </header>
         <ul style={{ display: 'flex', flexFlow: 'row wrap', gap: '1rem' }}>
           <li>
-            <ButtonLink variant="secondary" href="http://google.com">
+            <ButtonLink
+              variant="secondary"
+              href="mailto:josh@joshferrell.me?subject=Would like to work together"
+            >
               Send an e-mail
             </ButtonLink>
           </li>

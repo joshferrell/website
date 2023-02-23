@@ -18,11 +18,13 @@ export const metadata: Metadata = {
   keywords: 'Design Systems, React, Software Engineer, Typescript, Javascript',
   twitter: {
     card: 'summary_large_image',
-    title: 'Joshua Ferrell',
+    title: 'Joshua Ferrell | Design Systems and Frontend Technical Lead',
     creator: '@norablindsided',
     site: '@norablindsided',
+    description:
+      'Staff Software Engineer specializing in frontend software development. Follow blog for design system and Javscript news',
     images: {
-      url: 'https://www.joshferrell.me/twitter-image.png',
+      url: 'https://www.joshferrell.me/social-image.png',
       alt: 'Josh Ferrell, staff software engineer',
     },
   },
@@ -30,13 +32,13 @@ export const metadata: Metadata = {
     title: 'Josh Ferrell',
     description:
       'Josh Ferrell, staff software engineer specializing in frontend software development. Follow blog for design and Javascript news',
-    url: 'https://joshferrell.me',
+    url: 'https://www.joshferrell.me',
     siteName: 'Josh Ferrell',
     images: [
       {
-        url: 'https://www.joshferrell.me/facebook-image.png',
-        width: 1080,
-        height: 1080,
+        url: 'https://www.joshferrell.me/social-image.png',
+        width: 1200,
+        height: 630,
       },
     ],
     locale: 'en-US',
