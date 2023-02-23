@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   description:
     'Josh Ferrell, Staff Software Engineer specializing in frontend software development. Follow blog for design system and Javscript news',
   keywords: 'Design Systems, React, Software Engineer, Typescript, Javascript',
+  alternates: {
+    canonical: 'https://www.joshferrell.me',
+  },
   twitter: {
     card: 'summary_large_image',
     title: 'Joshua Ferrell | Design Systems and Frontend Technical Lead',

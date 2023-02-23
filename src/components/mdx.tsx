@@ -14,10 +14,11 @@ const components = {
       height={364}
       style={{
         borderRadius: '1rem',
-        width: 'auto',
-        height: '364px',
+        width: '100%',
+        height: '400px',
         display: 'block',
         margin: '0 auto',
+        objectFit: 'cover',
       }}
       {...props}
     />

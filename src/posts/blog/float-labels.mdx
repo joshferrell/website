@@ -35,6 +35,10 @@ The design of the form seems simple, but are there any issues with it?
   frameBorder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
   allowFullScreen
+  style={{
+    width: '100%',
+    height: '315px',
+  }}
 ></iframe>
 
 Nielsen Norman has done [some research](https://www.nngroup.com/articles/form-design-placeholders/) on issues they have found with
@@ -53,7 +57,20 @@ Material and a few others place their help text under the input. However, this [
 
 Appropriately sized inputs give users an affordance that only a certain number of characters are required to enter, for example, a zip code field that has a small width fitting 5 characters. In the case of float labels, we need to size the field to 8 characters, or possibly more, to work with the width of the label.
 
-![Form with inputs of zip code with label slightly overflowing when in a non-floating state](https://pbs.twimg.com/media/FVauKa8UcAA0jPW?format=png&name=240x240)
+<img
+  width={400}
+  height={400}
+  style={{
+    borderRadius: '1rem',
+    width: '100%',
+    maxWidth: '400px',
+    height: 'auto',
+    display: 'block',
+    margin: '0 auto',
+  }}
+  alt="Form with inputs of zip code with label slightly overflowing when in a non-floating state"
+  src="https://pbs.twimg.com/media/FVauKa8UcAA0jPW?format=png&name=240x240"
+/>
 
 ## Conclusion
 

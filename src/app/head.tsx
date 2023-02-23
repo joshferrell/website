@@ -25,7 +25,6 @@ export default function Head() {
       <meta name="msapplication-TileColor" content="#0d0d0d" />
       <meta name="theme-color" content="#0d0d0d" />
 
-      <link rel="canonical" href="http://joshferrell.me" />
       <link rel="icon" href="/favicon.ico" />
     </>
   );

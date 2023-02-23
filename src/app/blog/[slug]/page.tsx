@@ -19,12 +19,17 @@ export const generateMetadata = ({ params }: PropTypes): Metadata => {
   const blog = allBlogs.find((post) => post.slug === params.slug);
   if (!blog) return {};
 
+  const url = `https://www.joshferrell.me/blog/${params.slug}`;
+
   const imageUrl = blog.image.includes('https://')
     ? blog.image
     : `https://www.joshferrell.me${blog.image.replace('.webp', '.png')}`;
 
   return {
     title: `Josh Ferrell | ${blog.title}`,
+    alternates: {
+      canonical: url,
+    },
     description: blog.summary,
     twitter: {
       card: 'summary_large_image',
@@ -41,14 +46,14 @@ export const generateMetadata = ({ params }: PropTypes): Metadata => {
       title: blog.title,
       type: 'article',
       description: blog.summary,
-      url: `https://joshferrell.me/blog/${params.slug}`,
+      url,
       locale: 'en-US',
       images: [
         {
           url: imageUrl,
           alt: blog.imageAlt,
-          width: 647,
-          height: 364,
+          width: 1200,
+          height: 630,
         },
       ],
     },
