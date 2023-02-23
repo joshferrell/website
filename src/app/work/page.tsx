@@ -7,7 +7,7 @@ export const metadata = {
 
 const Blog = () => (
   <Container title="Experience">
-    <CardLink isExternal={true} href="https://represent.io/jferrell.pdf">
+    <CardLink isExternal={true} href="/joshua-ferrell-resume.pdf">
       Download my full resume
     </CardLink>
   </Container>
