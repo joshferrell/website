@@ -12,11 +12,13 @@
 	--text-inverted: #0d0d0d;
 	--border-primary: #7a7a7a;
 	--border-accent: #161616;
+	--link-primary: #78a9ff;
+	--link-primary-hover: #a6c8ff; 
 }
 
 body {
 	background-color: var(--background-background);
-	color: --text-primary;
+	color: var(--text-primary);
 }
 
 html, body, div, span, applet, object, iframe,
@@ -66,5 +68,13 @@ table {
 	border-spacing: 0;
 }
 a {
-	color: #60a5fa;
+	color: var(--link-primary);
+	&:hover {
+		color: var(--link-primary-hover);
+	}
+}
+
+// override for dracula system to make accessible
+.token.cdata, .token.comment, .token.doctype, .token.prolog {
+  color: #6a7cb5 !important;
 }

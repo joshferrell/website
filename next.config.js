@@ -5,6 +5,7 @@ const nextConfig = {
   pageExtensions: ['ts', 'tsx'],
   experimental: {
     appDir: true,
+    mdxRs: true,
   },
 };
 

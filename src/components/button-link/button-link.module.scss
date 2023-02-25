@@ -27,12 +27,19 @@
         font-weight: 600;
         border-color: var(--border-primary);
     }
+
+    &:focus {
+        outline-offset: .2rem;
+        outline: 1px solid #0f62fe;
+    }
 }
 
 .secondary {
     background-color: transparent;
+    
     &:hover {
         border-color: var(--background-surface-02);
+        color: var(--text-primary);
     }
 
     &:active {

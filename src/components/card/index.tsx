@@ -69,6 +69,7 @@ type WorkProps = {
   title: string;
   category: string;
   description: string;
+  url: string;
   image: {
     source: any;
     alt: string;
@@ -78,14 +79,15 @@ type WorkProps = {
 export const WorkCard = ({
   title,
   category,
+  url,
   description,
   image,
 }: WorkProps) => (
-  <Card href="/">
+  <Card href={url}>
     <div className={styles.imageContainer}>
       <Image src={image.source} alt={image.alt} fill={true} />
     </div>
-    <Box as="h2" variant="sectionTitle">
+    <Box as="h3" variant="sectionTitle">
       {title}
     </Box>
     <Box as="small" variant="small">

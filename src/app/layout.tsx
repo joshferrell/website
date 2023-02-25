@@ -14,18 +14,18 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: 'Josh Ferrell',
   description:
-    'Josh Ferrell, Staff Software Engineer specializing in frontend software development. Follow blog for design system and Javscript news',
+    'Josh Ferrell, Staff Software Engineer specializing in front-end software development. Follow blog for design system and Javscript news',
   keywords: 'Design Systems, React, Software Engineer, Typescript, Javascript',
   alternates: {
     canonical: 'https://www.joshferrell.me',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Joshua Ferrell | Design Systems and Frontend Technical Lead',
+    title: 'Joshua Ferrell | Design Systems and Front-end Technical Lead',
     creator: '@norablindsided',
     site: '@norablindsided',
     description:
-      'Staff Software Engineer specializing in frontend software development. Follow blog for design system and Javscript news',
+      'Staff Software Engineer specializing in front-end software development. Follow blog for design system and Javscript news',
     images: {
       url: 'https://www.joshferrell.me/social-image.png',
       alt: 'Josh Ferrell, staff software engineer',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Josh Ferrell',
     description:
-      'Josh Ferrell, staff software engineer specializing in frontend software development. Follow blog for design and Javascript news',
+      'Josh Ferrell, staff software engineer specializing in front-end software development. Follow blog for design and Javascript news',
     url: 'https://www.joshferrell.me',
     siteName: 'Josh Ferrell',
     images: [
