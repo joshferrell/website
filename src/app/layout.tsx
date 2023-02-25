@@ -53,7 +53,7 @@ export default function RootLayout({
 }) {
   const links = [
     { href: '/', children: 'Home' },
-    { href: '/work', children: 'Portfolio' },
+    { href: '/work', children: 'Experience' },
     { href: '/blog', children: 'Blog' },
     { href: '/about', children: 'About' },
     { href: '/contact', children: 'Contact' },
@@ -68,25 +68,34 @@ export default function RootLayout({
         background="background"
         className={manrope.className}
       >
-        <nav>
-          <ul
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '1.8rem',
-              flexWrap: 'wrap',
-              listStyleType: 'none',
-              padding: '1.5rem',
-            }}
+        <header role="banner">
+          <a
+            href="#skip"
+            accessKey="s"
+            style={{ position: 'absolute', left: '-1000px', zIndex: 2 }}
           >
-            {links.map((props) => (
-              <li key={props.children}>
-                <Link {...props} color="secondary" />
-              </li>
-            ))}
-          </ul>
-        </nav>
+            Skip to content.
+          </a>
+          <nav>
+            <ul
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '1.8rem',
+                flexWrap: 'wrap',
+                listStyleType: 'none',
+                padding: '1.5rem',
+              }}
+            >
+              {links.map((props) => (
+                <li key={props.children}>
+                  <Link {...props} color="secondary" />
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </header>
         {children}
       </Box>
       <Script

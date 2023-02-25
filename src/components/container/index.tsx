@@ -24,7 +24,7 @@ export const Container = ({
   backLink,
   children,
 }: PropTypes) => (
-  <main className={styles.main}>
+  <main id="skip" role="main" className={styles.main}>
     {backLink && (
       <div style={{ marginBottom: '4rem' }}>
         <BackButton variant="secondary" href={backLink.href}>
@@ -74,7 +74,7 @@ export const Container = ({
 );
 
 export const BlogPage = ({ children }: { children: React.ReactNode }) => (
-  <main className={styles.main}>
+  <main id="skip" role="main" className={styles.main}>
     <section
       style={{
         marginTop: '4rem',
