@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import classNames from 'classnames';
 import { Box } from '../box';
-import styles from './card.module.scss';
+import styles from './card.module.css';
 import { AllHTMLAttributes, createElement } from 'react';
 
 type ElementProps = Omit<AllHTMLAttributes<HTMLElement>, 'as' | 'href'>;

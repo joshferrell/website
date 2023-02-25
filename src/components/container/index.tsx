@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { Box } from '../box';
 import { BackButton } from '../button-link';
-import styles from './container.module.scss';
+import styles from './container.module.css';
 
 type PropTypes = {
   title: string;

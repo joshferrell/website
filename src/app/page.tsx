@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import styles from './page.module.scss';
+import styles from './page.module.css';
 import { Box } from '~/components/box';
 import { CardLink, Link } from '~/components/link';
 
@@ -12,7 +12,8 @@ const Home = () => (
         Hey, I&apos;m&nbsp;
         <Image
           src={profilePhoto}
-          alt="Photo of Josh Ferrell"
+          alt=""
+          aria-hidden={true}
           width={60}
           height={60}
           placeholder="blur"

@@ -49,7 +49,6 @@ footer, header, hgroup, menu, nav, section {
 body {
 	font-weight: 400;
     font-size: 1rem;
-    // letter-spacing: 0.03125rem;
     line-height: 1.6rem;
 }
 ol, ul {
@@ -69,12 +68,13 @@ table {
 }
 a {
 	color: var(--link-primary);
-	&:hover {
-		color: var(--link-primary-hover);
-	}
 }
 
-// override for dracula system to make accessible
+a:hover {
+	color: var(--link-primary-hover);
+}
+
+/* override for dracula system to make accessible */
 .token.cdata, .token.comment, .token.doctype, .token.prolog {
   color: #6a7cb5 !important;
 }

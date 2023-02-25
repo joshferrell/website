@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import Link from 'next/link';
-import styles from './button-link.module.scss';
+import styles from './button-link.module.css';
 
 type PropTypes = {
   href: string;
@@ -46,7 +46,7 @@ export const ButtonLink = ({
   }
 
   return (
-    <a href={href} className={buttonClass} target="_blank" rel="noreferrer">
+    <a href={href} className={buttonClass} rel="noreferrer">
       {children}
     </a>
   );

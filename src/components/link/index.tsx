@@ -1,7 +1,7 @@
 import NextLink from 'next/link';
 
 import { Box } from '../box';
-import styles from './link.module.scss';
+import styles from './link.module.css';
 
 type BaseProps = {
   isExternal?: boolean;
@@ -43,7 +43,6 @@ export const Link = ({
     <Box
       as="a"
       href={href}
-      target="_blank"
       rel="noreferrer"
       variant={variant}
       className={className}

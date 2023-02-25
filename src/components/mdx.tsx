@@ -24,6 +24,9 @@ const components = {
       style={{ textAlign: 'left' }}
     />
   ),
+  ul: (props: any) => (
+    <ul {...props} style={{ listStyle: 'disc', padding: '0 2rem' }} />
+  ),
   pre: (props: any) => (
     <pre
       style={{

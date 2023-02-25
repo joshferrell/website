@@ -6,9 +6,11 @@ import { CardLink } from '~/components/link';
 import { WorkCard } from '~/components/card';
 import { Container } from '~/components/container';
 import { Box } from '~/components/box';
-
-import profileImage from '../../../public/social-image.png';
 import { Collapse } from '~/components/collapse';
+
+import fedexLogo from '../../../public/fedex.webp';
+import goodleapLogo from '../../../public/good-leap.webp';
+import tvaLogo from '../../../public/tva.webp';
 
 export const metadata = {
   title: 'Josh Ferrell | Experience',
@@ -16,7 +18,8 @@ export const metadata = {
 
 type PropTypes = {
   title: string;
-  subtitle: string;
+  company: string;
+  year: string;
   children: React.ReactNode;
   image: string | StaticImageData;
   defaultOpen?: boolean;
@@ -24,7 +27,8 @@ type PropTypes = {
 
 const AwardToggle = ({
   title,
-  subtitle,
+  company,
+  year,
   children,
   image,
   defaultOpen = false,
@@ -37,10 +41,14 @@ const AwardToggle = ({
         aria-hidden={true}
         width={75}
         height={75}
+        quality={100}
+        placeholder="blur"
         style={{ borderRadius: '100%' }}
       />
       <div>
-        <Box color="secondary">{subtitle}</Box>
+        <Box color="secondary">
+          {company} &#x2022; {year}
+        </Box>
         <Box variant="subtitle">{title}</Box>
       </div>
     </div>
@@ -57,7 +65,7 @@ const AwardToggle = ({
 
 const Work = () => {
   const posts = allWorks
-    // .filter((post) => post.published)
+    .filter((post) => post.published)
     .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
 
   return (
@@ -77,8 +85,9 @@ const Work = () => {
           <AwardToggle
             defaultOpen={true}
             title="Innovator of the Year"
-            subtitle="GoodLeap | 2020"
-            image={profileImage}
+            company="GoodLeap"
+            year="2020"
+            image={goodleapLogo}
           >
             <p>
               Awarded Innovator of the Year at GoodLeap for outstanding
@@ -98,8 +107,9 @@ const Work = () => {
           </AwardToggle>
           <AwardToggle
             title="Winning at Work"
-            subtitle="Tennessee Valley Authority | 2016"
-            image={profileImage}
+            company="Tennessee Valley Authority"
+            year="2016"
+            image={tvaLogo}
           >
             <p>
               Awarded for outstanding contributions to the successful completion
@@ -111,8 +121,9 @@ const Work = () => {
           </AwardToggle>
           <AwardToggle
             title="Customer Focus Award"
-            subtitle="FedEx | 2014"
-            image={profileImage}
+            company="FedEx"
+            year="2014"
+            image={fedexLogo}
           >
             <p>
               Awarded for exceptional dedication to ensuring customer
@@ -124,8 +135,9 @@ const Work = () => {
           </AwardToggle>
           <AwardToggle
             title="Director's Choice"
-            subtitle="FedEx | 2014"
-            image={profileImage}
+            company="FedEx"
+            year="2014"
+            image={fedexLogo}
           >
             <p>
               Awarded for contributions to a 10-week intern project at FedEx.

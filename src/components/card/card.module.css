@@ -11,9 +11,11 @@
     transform: scale(1);
     display: block;
 
-    small {
-        color: var(--text-secondary);
-    }
+
+}
+
+.card small {
+    color: var(--text-secondary);
 }
 
 .callout {
@@ -27,13 +29,13 @@
 }
 
 a.card:hover, a.card:focus {
-    img {
-        opacity: 0.64 !important;
-    }
-
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
     border-color: var(--border-primary);
     transform: scale(1.05);
+}
+
+a.card:hover img, a.card:focus img {
+    opacity: 0.64 !important;
 }
 
 .imageContainer {
@@ -41,11 +43,11 @@ a.card:hover, a.card:focus {
     height: 280px;
     width: 100%;
     margin-bottom: 1rem;
+}
 
-    & > img {
-        transition: opacity .3s ease-in;
-        object-fit: cover;
-        border-radius: 0.625rem;
-        margin-bottom: 1rem;
-    }
+.imageContainer > img {
+    transition: opacity .3s ease-in;
+    object-fit: cover;
+    border-radius: 0.625rem;
+    margin-bottom: 1rem;
 }

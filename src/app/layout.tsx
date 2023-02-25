@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 
 import { Box } from '~/components/box';
 import { Link } from '~/components/link';
-import './globals.scss';
+import './globals.css';
 
 const manrope = Manrope({
   weight: 'variable',
@@ -16,9 +16,6 @@ export const metadata: Metadata = {
   description:
     'Josh Ferrell, Staff Software Engineer specializing in front-end software development. Follow blog for design system and Javscript news',
   keywords: 'Design Systems, React, Software Engineer, Typescript, Javascript',
-  alternates: {
-    canonical: 'https://www.joshferrell.me',
-  },
   twitter: {
     card: 'summary_large_image',
     title: 'Joshua Ferrell | Design Systems and Front-end Technical Lead',

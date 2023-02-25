@@ -4,6 +4,9 @@ The Personal website of Josh Ferrell with some thoughts and ideas peppered throu
 
 ## Todo List items
 
+- [ ] Improve type scale
+  - will need to increase max width most likely
+
 ### Article Ideas
 
 - [ ] Vanilla-Extract

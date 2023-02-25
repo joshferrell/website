@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { AllHTMLAttributes, createElement, ElementType } from 'react';
-import styles from './typography.module.scss';
+import styles from './typography.module.css';
 
 type ElementProps = Omit<
   AllHTMLAttributes<HTMLElement>,
