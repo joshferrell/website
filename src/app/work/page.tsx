@@ -10,9 +10,9 @@ export const metadata = {
 };
 
 const Work = () => {
-  const posts = allWorks.sort((a, b) =>
-    compareDesc(new Date(a.date), new Date(b.date))
-  );
+  const posts = allWorks
+    .filter((post) => post.published)
+    .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
 
   return (
     <Container title="Experience">

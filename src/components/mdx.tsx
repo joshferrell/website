@@ -13,6 +13,8 @@ const components = {
       {...props}
     />
   ),
+  strong: (props: any) => <strong {...props} style={{ fontWeight: 'bold' }} />,
+  em: (props: any) => <em {...props} style={{ fontStyle: 'italic' }} />,
   br: () => <br />,
   blockquote: (props: any) => (
     <Card

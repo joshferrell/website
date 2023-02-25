@@ -1,48 +1,68 @@
 ---
 title: The Unencumbered User
 date: 2023-02-25
+published: false
 category: Accessibility
 image: /blog-photos/unencumbered-user.webp
 imageAlt: The float label form interaction by Matt D Smith
 summary: An analysis and critique of the current state of software in making assumptions about users and ignoring accessibility.
 ---
 
-Having a partner in sociology, I get a pretty interesting perspective in the current state of
-the world. Their focus in food assitance for the past few years during COVID and the surge
-in awareness of food insecurity has really opened my eyes regarding the barriers to food that people
-have. They posted an article about [Barriers to Access: The Unencumbered Client in Private Food Assitance](https://journals.sagepub.com/doi/full/10.1177/23294965221129572)
-that reminded me about how tech and food banks approach problems in similar ways.
+Having a partner in sociology, I get a pretty interesting perspective on the current state of
+the world. Their focus on food assistance for the past few years during COVID-19 and the surge
+in awareness of food insecurity has really opened my eyes regarding the barriers that people face accessing food. She published an article about [Barriers to Access: The Unencumbered Client in Private Food Assistance](https://journals.sagepub.com/doi/full/10.1177/23294965221129572)
+that reminded me about how tech and food banks approach problems in similar ways. Both food banks and tech expect that their customers are unencumbered, approaching the service from the ideal situation. However, people's lives are complicated and varied.
 
 > "The unencumbered client has access to ample resources (time, transportation, information, kitchen, etc.) to help them access and best use services while also not experiencing hardships or additional needs (homelessness, lack of transportation, disabilities and health issues, etc.) that lead to barriers accessing and using services."
+>
+> -- <cite><a href="https://journals.sagepub.com/doi/full/10.1177/23294965221129572">Alana Haynes Stein</a></cite>
 
-The unencumbered client is able to travel to a food bank in their car. They have access to a kitchen
-so they're able to cook rice or other uncooked products they may be given. They can wait in line for long periods of time because the food at the beginning of a distribution is better or has more options. They have someone to watch their children while they wait for a distribution. There's a pantry where they can store the items they're given.
+In food banks, organizations assume clients are unencumbered. The unencumbered client is able to travel to a food bank in their car. They have access to a kitchen
+so they're able to cook rice or other uncooked products they may be given. They can wait in line for long periods of time because the food at the beginning of a distribution is better or has more options. They have someone to watch their children while they wait for a distribution. They have a fridge where they can store the items they're given.
 
-This unencumbered client conflicts with the reality of the situation where someone is needing the
-resources of a food bank. Software has similar problems where sites are built making assumptions for how people access websites.
+This unencumbered client conflicts with the reality of the situations of many people needing the resources of a food bank. Software has similar problems where sites are built making assumptions for how people access products.
+
+## Assumptions of the unencumbered user in tech
+
+![Legolas from Lord of the Rings looking to the distance with caption: Legolas! What do your elf eyes see?](https://i.kym-cdn.com/entries/icons/original/000/000/820/Legolas_What_Do_Your_Elf_Eyes_See_banner.png)
+
+The unencumbered user is able to read small text and see light blue links on a slightly darker blue background.
+They can click small buttons with pinpoint precision. They are completely attentive and are devoting their full
+attention to the task at hand. Any audio or visual used in the product is completely understood the first time.
+They always have high speed internet connections and the latest Macbook Pro. They are fluent in the native language
+of the company.
 
 ## Accessibility Assumptions and MVP
 
-Tech has always gravitated towards a method of thinking like agile where rapid development and
-deployment of software features is priorititzed. While the approach has many benefits like ability
+Tech has always gravitated towards a method of thinking like Agile where rapid development and
+deployment of software features is prioritized. While the approach has many benefits, like the ability
 to experiment and push new features rapidly, it can result in developers rushing to release new features without taking the time to ensure that they are accessible.
 
 ![Mark Zuckerberg presenting concept of Move Fast and Break Things](/blog-photos/unencumbered-user/move-fast-break-things.webp)
 
-A culture of "move fast and break things" priotizes growth and innovation, but it creates a sense of
-urgency where developers need to meet deadlines or OKRs which leads to shortcuts.
+A culture of "move fast and break things" prioritizes growth and innovation, but it creates a sense of
+urgency where developers need to meet deadlines or OKRs which leads to shortcuts. Designing food bank programs or software that expects customers to be unencumbered, originates from lack of diversity in organizations as explained by [Joan Acker](https://www.jstor.org/stable/27640904) who originally developed the concept to describe how assumptions of unencumbered workers create gendered and racial disparities in workplaces.
 
-Adrian Roselli wrote an article called [Accessibility 'Gaps' in MVPs](https://adrianroselli.com/2022/11/accessibility-gaps-in-mvps.html) where companies that perpetuate a message of inclusiveness and accessibilty still push new features in a public beta or behind feature flags that have bad contrast or aren't keyboard friendly.
+Adrian Roselli wrote an article called [Accessibility 'Gaps' in MVPs](https://adrianroselli.com/2022/11/accessibility-gaps-in-mvps.html) describing how major companies that perpetuate a message of inclusiveness and accessibility still push new features in a public beta or behind feature flags that have bad contrast or aren't keyboard friendly.
 
-While companies will speak about a culture of accessibility or inclusiveness, these attributes aren't
-truly valued in an environment where moving quickly or high growth is what is actually valued.
-Technical achievements are celebrated, or designs with animations or easter eggs are shared and copied, but the [plethora of contrast issues are ignored](https://twitter.com/norablindsided/status/1280251316044886016).
+> "If your MVP does not have accessibility factored in, it is not viable. If you claim accessibility is a core principle but your version 0 does not include it, then it is not a core principle."
+>
+> -- [Adrian Roselli](https://adrianroselli.com/2022/11/accessibility-gaps-in-mvps.html)
+
+While companies will speak about a culture of accessibility and inclusiveness, these attributes aren't
+truly valued in an environment where speed and growth are prioritized over creating products accessible to all users.
+Technical achievements are celebrated and bonus features like designs with animations or easter eggs are shared and copied, but the [plethora of contrast issues are ignored](https://twitter.com/norablindsided/status/1280251316044886016).
 
 ## Starting to think about all users
 
+In tech, we need to start thinking about about building more accessible and inclusive products. We need to build products that are accessible to all rather than expecting customers to be unencumbered in an optimized environment. These are some ways we can do this.
+
 ### Be selfish
 
-If you haven't seen this talk by Adrian Roselli, I highly recommend checking it out. In it, they
+Companies often view accessible design as a niche product that only impacts a handful of customers, and some even believe that they don't
+have users with disabilities using the product at all. However, designing accesible products benefits _everyone_.
+
+If you haven't seen this talk by Adrian Roselli, I highly recommend checking it out. They
 present the idea of selfish accessibility, approaching design from the perspective of someone working
 outside on a bright day. On a bright day, color contrast matters, it's not just about color blindness.
 
@@ -62,18 +82,19 @@ outside on a bright day. On a bright day, color contrast matters, it's not just 
 
 ### Integrate it into the core of thinking
 
-One method used in developing user stories is an idea of a persona. An example persona could be
+One method used in developing user stories is an idea of a persona. However, most personas make an assumption
+that no encumbrances exist. An example persona could be
 something like, Josh is a 28 year old who watches way too much TV and is wanting to manage his
 subscriptions to different streaming services that he may no longer use. Josh may use Google or Twitter
-to lookup different solutions to finding what services can discover what he's currently paying for.
+to lookup different solutions to finding services that can discover what he's currently paying for.
 
 A lot of assumptions are made about Josh here. For instance,
-it's probably assumed that Josh isn't blind because otherwise ["how could they watch TV?"](https://mobile.twitter.com/BlondeHistorian/status/1412727879457251333)
+it's probably assumed that Josh isn't blind because otherwise ["how could they watch TV?"](https://mobile.twitter.com/BlondeHistorian/status/1412727879457251333). Josh could have a toddler who likes to steal his phone, so filling out all his bank information and different credit cards could be too time consuming for him to complete on his phone.
 
-In Shawn Henry's book ["Just Ask: Integrating Accessibility Throughout Design"](http://www.uiaccess.com/accessucd/personas_eg.html), they propose the idea of integrating personas that include accessibility considerations. For instance, they have a Persona named Roger who has a tremor in their right hand and has some difficulty in using the mouse.
+In Shawn Henry's book ["Just Ask: Integrating Accessibility Throughout Design"](http://www.uiaccess.com/accessucd/personas_eg.html), they propose the idea of integrating personas that include accessibility considerations. For instance, they create a persona named Roger who has a tremor in their right hand and has some difficulty in using the mouse.
 
 A designer who is working on a product for Roger would need to think about expanding their button sizes so Roger has a larger click target.
 
 ## Conclusion
 
-When designing and developing keep in the top of your mind that this unencumbered user doesn't exist, and instead, keep barriers in mind during the development and design processes.
+When designing and developing, keep in the top of your mind that this unencumbered user doesn't exist, and instead, keep barriers in mind during the development and design processes.

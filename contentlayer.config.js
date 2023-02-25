@@ -18,6 +18,11 @@ export const Blog = defineDocumentType(() => ({
       description: 'The title of the post',
       required: true,
     },
+    published: {
+      type: 'boolean',
+      description: 'Is the article ready to be listed',
+      required: true,
+    },
     category: {
       type: 'string',
       description: 'The type of category',
@@ -68,6 +73,11 @@ export const Work = defineDocumentType(() => ({
       type: 'string',
       description: 'URL of the project source',
       required: false,
+    },
+    published: {
+      type: 'boolean',
+      description: 'Is the article ready to be listed',
+      required: true,
     },
     category: {
       type: 'string',

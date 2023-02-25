@@ -9,9 +9,9 @@ export const metadata = {
 };
 
 const Blog = () => {
-  const posts = allBlogs.sort((a, b) =>
-    compareDesc(new Date(a.date), new Date(b.date))
-  );
+  const posts = allBlogs
+    .filter((post) => post.published)
+    .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
 
   return (
     <Container title="Thoughts">
