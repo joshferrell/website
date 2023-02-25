@@ -1,0 +1,94 @@
+---
+title: Storybook and Contentful Plugin
+date: 2023-02-23
+category: Open Source
+image: /blog-photos/storybook-cms.webp
+imageAlt: Contenful CMS loves Storybook
+summary: A CLI utility that syncs Storybook files to Contenful CMS giving designers the ability to directly contribute to Storybook documentation.
+link: https://github.com/joshferrell/storybook-contentful
+---
+
+When it comes to design systems, barriers are the enemy. The worst kind of barrier is that between design and development. When it comes to documentation, developers love using [Storybook](storybook.js.org/) as it allows them to view real, live components, inspect and copy code, and provides a development environment for testing and hot module reloading for changes.
+
+The issue with Storybook is that it relies on the ability to write your documentation using Markdown, JavaScript, or [MDX](https://mdxjs.com/). While this works great for developers who need to document the usage of there components, this prevents designers who may have no code experience from being able to contribute to the documentation.
+
+## The Solution
+
+This is why I built [storybook-contentful](https://github.com/joshferrell/storybook-contentful). A CLI that allows developers to sync Contentful CMS changes which can then be added to a git hook or integrated in existing CI pipelines.
+
+## How it works
+
+The project assumes that you are using Storybook and mdx for documentation. It's recommended to use Storybook 7 and [Component Story Format 3](https://storybook.js.org/blog/storybook-csf3-is-here/). for best results.
+
+The structure for stories is something like this:
+
+```ts
+// Button.stories.ts
+
+import type { Meta } from '@storybook/react';
+import { Button } from './Button';
+
+const meta = {
+  title: 'Button',
+  component: Button,
+  tags: ['autodocs'],
+} satisfies Meta<typeof Button>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Primary: Story = {
+  args: {
+    primary: true,
+    label: 'Button',
+  },
+};
+```
+
+and the markdown for your documentation looks something like this:
+
+```md
+<!-- Button.stories.mdx -->
+
+import { Meta, Story } from '@storybook/blocks';
+import \* as ButtonStories from './Button.stories';
+
+<Meta of={ButtonStories} />
+
+# Button
+
+Button is a clickable interactive element.
+
+## Usage
+
+<Story of={ButtonStories.Primary} />
+```
+
+### Installation
+
+```bash
+pnpm i -D @saasy/storybook-contentful
+```
+
+Add the following secrets to your `.env` file. If you're not sure where this information comes from [view the Contenful documentation](https://www.contentful.com/developers/docs/references/authentication/#api-keys-in-the-contentful-web-app) to find these keys and generate them.
+
+```bash
+CONTENTFUL_ACCESS_TOKEN=supersecret
+CONTENTFUL_SPACE_ID=notsosecret
+CONTENTFUL_ENVIRONMENT=master
+```
+
+### Usage
+
+Download all files from Contentful and place them in a given path
+
+```bash
+storybook-contentful download ./stories
+```
+
+Upload all files from the given path to Contentful
+
+```bash
+storybook-contentful upload ./stories
+```

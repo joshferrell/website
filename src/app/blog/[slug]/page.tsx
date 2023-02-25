@@ -70,6 +70,7 @@ const Page = async ({ params }: PropTypes) => {
 
   return (
     <Container
+      backLink={{ href: '/blog', text: 'Return to blog' }}
       image={{ src: blog.image, alt: blog.imageAlt }}
       title={blog.title}
       subtitle={blog.category}

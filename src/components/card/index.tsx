@@ -3,28 +3,43 @@ import Image from 'next/image';
 import classNames from 'classnames';
 import { Box } from '../box';
 import styles from './card.module.scss';
+import { AllHTMLAttributes, createElement } from 'react';
 
-type PropTypes = {
+type ElementProps = Omit<AllHTMLAttributes<HTMLElement>, 'as' | 'href'>;
+
+type PropTypes = ElementProps & {
+  as?: React.ElementType;
   children: React.ReactNode;
   variant?: 'callout' | 'flat';
   href?: string;
 };
 
-export const Card = ({ children, href, variant = 'flat' }: PropTypes) =>
-  href ? (
-    <Link href={href} className={styles.card}>
-      <article>{children}</article>
-    </Link>
-  ) : (
-    <article
-      className={classNames(
-        styles.card,
-        variant !== 'flat' ? styles.callout : ''
-      )}
-    >
-      {children}
-    </article>
+export const Card = ({
+  as = 'article',
+  children,
+  href,
+  variant = 'flat',
+  ...htmlAttributes
+}: PropTypes) => {
+  if (href) {
+    return (
+      <Link href={href} className={styles.card}>
+        <article>{children}</article>
+      </Link>
+    );
+  }
+
+  const atomicClasses = classNames(
+    styles.card,
+    variant !== 'flat' ? styles.callout : ''
   );
+
+  return createElement(
+    as,
+    { className: atomicClasses, ...htmlAttributes },
+    children
+  );
+};
 
 type BlogProps = {
   title: string;

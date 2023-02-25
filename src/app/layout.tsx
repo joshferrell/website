@@ -1,4 +1,4 @@
-import { Manrope } from '@next/font/google';
+import { Manrope } from 'next/font/google';
 import Script from 'next/script';
 import type { Metadata } from 'next';
 

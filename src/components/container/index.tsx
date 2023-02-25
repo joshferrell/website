@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Box } from '../box';
+import { BackButton } from '../button-link';
 import styles from './container.module.scss';
 
 type PropTypes = {
@@ -9,11 +10,28 @@ type PropTypes = {
     src: string;
     alt: string;
   };
+  backLink?: {
+    href: string;
+    text: string;
+  };
   children: React.ReactNode;
 };
 
-export const Container = ({ title, subtitle, image, children }: PropTypes) => (
+export const Container = ({
+  title,
+  subtitle,
+  image,
+  backLink,
+  children,
+}: PropTypes) => (
   <main className={styles.main}>
+    {backLink && (
+      <div style={{ marginBottom: '4rem' }}>
+        <BackButton variant="secondary" href={backLink.href}>
+          {backLink.text}
+        </BackButton>
+      </div>
+    )}
     <header style={{ textAlign: 'center', margin: '0 auto' }}>
       <Box as="h1" variant="title">
         {title}
