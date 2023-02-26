@@ -39,7 +39,9 @@ export const AwardToggle = ({
           {company && <>{company} &#x2022;&nbsp;</>}
           {year}
         </Box>
-        <Box variant="subtitle">{name}</Box>
+        <Box className={styles.subtitle} variant="subtitle">
+          {name}
+        </Box>
       </div>
     </div>
   );
