@@ -56,7 +56,15 @@ const Work = () => {
         >
           Awards
         </Box>
-        <div style={{ display: 'flex', gap: '2rem', flexDirection: 'column' }}>
+        <div
+          style={{
+            display: 'flex',
+            gap: '2rem',
+            flexDirection: 'column',
+            margin: '0 auto',
+            maxWidth: '40.5rem',
+          }}
+        >
           {awards.map(({ body, isHidden, ...awardProps }) => (
             <AwardToggle
               key={awardProps.name}

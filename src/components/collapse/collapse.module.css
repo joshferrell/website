@@ -4,6 +4,7 @@
   background-color: var(--background-surface-01);
   border-radius: 1rem;
   transition: all 0.4s ease;
+  max-width: 40.5rem;
 }
 
 .collapse:hover,
@@ -11,6 +12,10 @@
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   border-color: var(--border-primary);
   transform: scale(1.03);
+}
+
+.collapse[open] svg {
+  transform: rotate(180deg);
 }
 
 .collapse img {

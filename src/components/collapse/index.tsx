@@ -1,6 +1,3 @@
-'use client';
-
-import { useState } from 'react';
 import styles from './collapse.module.css';
 
 const ArrowDown = (props: React.HTMLAttributes<SVGElement>) => (
@@ -40,16 +37,11 @@ export const Collapse = ({
   children,
   defaultOpen = false,
 }: CollapseProps) => {
-  const [isOpen, toggleOpen] = useState(defaultOpen);
   return (
-    <details
-      className={styles.collapse}
-      open={isOpen}
-      onToggle={() => toggleOpen(!isOpen)}
-    >
+    <details className={styles.collapse} open={defaultOpen}>
       <summary className={styles.summary}>
         <div>{header}</div>
-        <ArrowDown style={{ transform: `rotate(${isOpen ? '180deg' : 0})` }} />
+        <ArrowDown />
       </summary>
       <div className={styles.detailsContent}>{children}</div>
     </details>
