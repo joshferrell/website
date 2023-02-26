@@ -21,10 +21,6 @@ export const generateMetadata = ({ params }: PropTypes): Metadata => {
 
   const url = `https://www.joshferrell.me/blog/${params.slug}`;
 
-  const imageUrl = blog.image.includes('https://')
-    ? blog.image
-    : `https://www.joshferrell.me${blog.image.replace('.webp', '.png')}`;
-
   return {
     title: `Josh Ferrell | ${blog.title}`,
     alternates: {
@@ -38,8 +34,8 @@ export const generateMetadata = ({ params }: PropTypes): Metadata => {
       site: '@norablindsided',
       description: blog.summary,
       images: {
-        url: imageUrl,
-        alt: blog.imageAlt,
+        url: blog.socialImage,
+        alt: '',
       },
     },
     openGraph: {
@@ -50,8 +46,8 @@ export const generateMetadata = ({ params }: PropTypes): Metadata => {
       locale: 'en-US',
       images: [
         {
-          url: imageUrl,
-          alt: blog.imageAlt,
+          url: blog.socialImage,
+          alt: '',
           width: 1200,
           height: 630,
         },

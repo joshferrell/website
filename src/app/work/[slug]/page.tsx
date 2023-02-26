@@ -37,10 +37,10 @@ export const generateMetadata = ({ params }: PropTypes): Metadata => {
       title: work.title,
       creator: '@norablindsided',
       site: '@norablindsided',
-      description: work.summary,
+      description: work.socialImage,
       images: {
         url: imageUrl,
-        alt: work.imageAlt,
+        alt: '',
       },
     },
     openGraph: {
@@ -51,8 +51,8 @@ export const generateMetadata = ({ params }: PropTypes): Metadata => {
       locale: 'en-US',
       images: [
         {
-          url: imageUrl,
-          alt: work.imageAlt,
+          url: work.socialImage,
+          alt: '',
           width: 1200,
           height: 630,
         },
