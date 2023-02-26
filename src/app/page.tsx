@@ -32,6 +32,7 @@ const Home = () => (
         display: 'flex',
         flexDirection: 'column',
         gap: '1rem',
+        margin: '0 1rem',
       }}
     >
       <li>
