@@ -59,10 +59,9 @@ const components = {
       style={{
         borderRadius: '1rem',
         width: '100%',
-        height: '400px',
+        height: 'auto',
         display: 'block',
         margin: '0 auto',
-        objectFit: 'cover',
       }}
       {...props}
     />

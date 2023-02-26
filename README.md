@@ -6,7 +6,6 @@ The Personal website of Josh Ferrell with some thoughts and ideas peppered throu
 
 - [ ] Improve type scale
   - will need to increase max width most likely
-- [ ] Light Theme
 
 ### Article Ideas
 
@@ -34,12 +33,12 @@ The Personal website of Josh Ferrell with some thoughts and ideas peppered throu
 - [ ] Using mapping technology to create a proofer
 - [ ] Building a design system using vanilla-extract
 - [ ] Creating an email service that runs using template markdown
+
 - [ ] Move your Resume to an HTML-friendly format (low priority)
 - [ ] Experience timeline summary thing (low priority)
 
 ### Testing
 
-- [ ] Cypress spell check
 - [ ] Cypress axe runner on pages
 - [ ] Jest tests on colors and runs contrast checks on them.
   - Should I just make a hidden web page that has the values?
