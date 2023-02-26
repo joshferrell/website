@@ -19,22 +19,23 @@ The Personal website of Josh Ferrell with some thoughts and ideas peppered throu
 
 ### Twitter Posts
 
-Unencumbered
+#### Unencumbered
 
 - Accessibility is not a niche product, it benefits everyone. Don't assume your users are unencumbered, build products that are accessible to all. #designthinking #accessibility #inclusivity
-  StateMachines
+
+#### StateMachines
+
 - "Learn how I used XState state machines to streamline a solar loan approval process, simplifying complex business logic and improving collaboration between product owners and developers. #XState #stateMachines #development"
 - "Say goodbye to lengthy feedback loops and user stories. Learn how I used state machines in XState to simplify a solar loan approval process. #development #stateMachines #XState"
 
 ### Portfolio Page
 
-- [ ] Experience timeline summary thing (low priority)
-- [ ] Ask the career coach about highlighting skills
-- [ ] Add referrals blurbs
+- [ ] Ask the career coach about highlighting skills (React.js, JavaScript, etc.)
 - [ ] Using mapping technology to create a proofer
 - [ ] Building a design system using vanilla-extract
 - [ ] Creating an email service that runs using template markdown
-- [ ] Move Resume to an HTML friendly format
+- [ ] Move your Resume to an HTML-friendly format (low priority)
+- [ ] Experience timeline summary thing (low priority)
 
 ### Testing
 
