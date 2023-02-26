@@ -10,7 +10,7 @@ type ElementProps = Omit<
 interface PropTypes extends ElementProps {
   variant?: 'title' | 'subtitle' | 'sectionTitle' | 'body' | 'small';
   as?: ElementType;
-  color?: 'primary' | 'secondary' | 'inverted';
+  color?: 'primary' | 'secondary' | 'inverted' | 'highlight';
   background?: 'transparent' | 'background' | 'surface-01' | 'surface-02';
 }
 

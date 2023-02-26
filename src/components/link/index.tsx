@@ -9,12 +9,13 @@ type BaseProps = {
   children: React.ReactNode;
 };
 
-const ArrowRight = () => (
+export const ArrowRight = (props: React.HTMLAttributes<SVGElement>) => (
   <svg
     height="16"
     width="16"
     viewBox="0 0 16 16"
     xmlns="http://www.w3.org/2000/svg"
+    {...props}
   >
     <g fill="currentColor">
       <path
