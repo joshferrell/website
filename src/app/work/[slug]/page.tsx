@@ -37,9 +37,9 @@ export const generateMetadata = ({ params }: PropTypes): Metadata => {
       title: work.title,
       creator: '@norablindsided',
       site: '@norablindsided',
-      description: work.socialImage,
+      description: work.summary,
       images: {
-        url: imageUrl,
+        url: work.socialImage,
         alt: '',
       },
     },
