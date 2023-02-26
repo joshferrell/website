@@ -19,8 +19,9 @@ const Contact = () => {
 
   return (
     <Container
+      hideCTA={true}
       title="Get in touch"
-      subtitle="I'm always looking to collaborate on cool projects and with great people."
+      subtitle="I'm open to new opportunities! Let's work together to bring your project to life."
     >
       <Card variant="callout">
         <ProfileImage size={120} />

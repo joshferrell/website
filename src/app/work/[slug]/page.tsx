@@ -77,6 +77,7 @@ const Page = async ({ params }: PropTypes) => {
     <Container
       image={{ src: work.image, alt: work.imageAlt }}
       title={work.title}
+      headerType="postHeader"
       backLink={{ href: '/work', text: 'Return to portfolio' }}
       subtitle={subtitle}
     >
