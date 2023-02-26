@@ -2,7 +2,7 @@
 name: Ben Adelt
 company: Affirm
 title: Senior Product Designer
-profilePhotoUrl: /fedex.webp
+profilePhotoUrl: https://ik.imagekit.io/jferrell/default-squashed.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1677406622769
 ---
 
 As a designer, it was a pleasure working directly with Josh. He was

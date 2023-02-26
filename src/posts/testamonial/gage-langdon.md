@@ -2,7 +2,7 @@
 name: Gage Langdon
 company: Confluent
 title: Senior Software Engineer II
-profilePhotoUrl: /fedex.webp
+profilePhotoUrl: https://ik.imagekit.io/jferrell/1676916794232-squashed.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1677406622804
 ---
 
 One of Josh's greatest strengths is his ability to multiply

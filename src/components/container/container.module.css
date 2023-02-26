@@ -1,8 +1,12 @@
 .main {
-  max-width: 40.5rem;
+  max-width: 90rem;
   margin: 3rem auto;
   padding: 0 1.5rem;
   background-color: var(--background-background);
+}
+
+.mainPartialWidth {
+  max-width: 40.5rem;
 }
 
 @media screen and (min-width: 810px) {

@@ -2,14 +2,10 @@
 name: Maxton Delaney
 company: Confluent
 title: Senior Software Engineer
-profilePhotoUrl: /fedex.webp
+profilePhotoUrl: https://ik.imagekit.io/jferrell/1579213866075-squashed.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1677406622805
 ---
 
-I have been lucky enough to work with Josh for several years at
-companies ranging from early stage startup environments to large
-scale technical organizations.
-
-In all our experience together, Josh has played a critical role
+I have been lucky enough to work with Josh for several years and in all our experience together, Josh has played a critical role
 given his architectural capabilities and his ‘get stuff done’
 attitude.
 

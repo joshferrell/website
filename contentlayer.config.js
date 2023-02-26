@@ -138,6 +138,7 @@ export const Testamonial = defineDocumentType(() => ({
     company: {
       type: 'string',
       description: 'The company the person works for',
+      required: true,
     },
     isHidden: {
       type: 'boolean',

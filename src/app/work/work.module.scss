@@ -1,0 +1,32 @@
+.referenceList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @media (max-width: 1023px) {
+    figure {
+      padding: 2.4rem;
+      background-color: var(--background-surface-01);
+      border: 1px solid var(--border-accent);
+      border-radius: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    gap: 0;
+  }
+}
+
+.portfolioList {
+  display: flex;
+  gap: 2.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media (min-width: 1024px) {
+    flex-flow: row wrap;
+    & > a {
+      flex-basis: 40%;
+    }
+  }
+}

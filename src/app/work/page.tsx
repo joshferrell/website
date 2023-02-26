@@ -1,11 +1,14 @@
-import { allWorks, allAwards } from 'contentlayer/generated';
+import { allWorks, allAwards, allTestamonials } from 'contentlayer/generated';
 import { compareDesc } from 'date-fns';
 
 import { CardLink } from '~/components/link';
 import { WorkCard } from '~/components/card';
+import { Reference } from '~/components/reference';
 import { Container } from '~/components/container';
 import { Box } from '~/components/box';
 import { AwardToggle } from '~/components/award';
+
+import style from './work.module.scss';
 
 export const metadata = {
   title: 'Josh Ferrell | Experience',
@@ -21,7 +24,7 @@ const Work = () => {
     .sort((a, b) => b.year - a.year);
 
   return (
-    <Container title="Experience">
+    <Container title="Experience" fullWidth={true}>
       <CardLink isExternal={true} href="/joshua-ferrell-resume.pdf">
         Download my full resume
       </CardLink>
@@ -34,7 +37,7 @@ const Work = () => {
           >
             Portfolio
           </Box>
-          <div>
+          <div className={style.portfolioList}>
             {posts.map((post) => (
               <WorkCard
                 key={post.slug}
@@ -48,6 +51,20 @@ const Work = () => {
           </div>
         </section>
       )}
+      <section>
+        <Box
+          as="h2"
+          variant="title"
+          style={{ textAlign: 'center', padding: '2rem 0' }}
+        >
+          References
+        </Box>
+        <div className={style.referenceList}>
+          {allTestamonials.map(({ body, ...ref }) => (
+            <Reference key={ref.name} code={body.html} {...ref} />
+          ))}
+        </div>
+      </section>
       <section>
         <Box
           as="h2"

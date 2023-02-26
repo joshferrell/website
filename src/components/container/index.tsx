@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import classNames from 'classnames';
+
 import { Box } from '../box';
 import { BackButton } from '../button-link';
 import styles from './container.module.css';
@@ -6,6 +8,7 @@ import styles from './container.module.css';
 type PropTypes = {
   title: string;
   subtitle?: string;
+  fullWidth?: boolean;
   image?: {
     src: string;
     alt: string;
@@ -21,10 +24,18 @@ export const Container = ({
   title,
   subtitle,
   image,
+  fullWidth = false,
   backLink,
   children,
 }: PropTypes) => (
-  <main id="skip" role="main" className={styles.main}>
+  <main
+    id="skip"
+    role="main"
+    className={classNames(
+      styles.main,
+      !fullWidth ? styles.mainPartialWidth : ''
+    )}
+  >
     {backLink && (
       <div style={{ marginBottom: '4rem' }}>
         <BackButton variant="secondary" href={backLink.href}>
