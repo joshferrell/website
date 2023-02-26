@@ -1,0 +1,57 @@
+---
+title: 'Visualizing Business Logic: Paired Programming with State Machines'
+date: 2023-02-23
+published: true
+category: Architecture
+image: https://ik.imagekit.io/jferrell/state-machines.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1677393939292
+socialImage: https://ik.imagekit.io/jferrell/state-machines.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677393939358
+imageAlt: A state machine visualization for changing methods of payment from check to cash
+summary: How I used XState to streamline a solar loan process, simplifying complex business logic and improving collaboration between product owners and developers.
+link: https://goodleap.com
+---
+
+When you have a product like a loan that has a very strict life cycle, things can get complicated quickly, especially
+when your architecture is event-based. Loans have rules that restrict when something can or cannot be approved. Solar
+loans in particular have requirements for installation completion as they need to be verified by a third party to
+connect to an electric grid.
+
+The typical steps for a solar loan are as follows:
+
+1. Application
+2. Credit checks and analysis
+3. Approval, Rejection, or More information by the borrower is required
+4. If approved, give the installer their money
+5. Installation can begin
+6. Installer says they did the work
+7. Local utility inspects and says that installation can connect to the power grid.
+
+This process isn't linear and can involve multiple parallel steps. Changes to the installation cost can occur if the original proposal is different, such as if a battery is out of stock from the manufacturer.
+When a change happens, it has to go through an approval process and some other steps to confirm that this is an acceptable change.
+
+It is a lot, and it was a lot for people to reason about. Different people knew different sections of the process
+_really_ well but didn't know what happened after the loan left their area of expertise.
+
+## Paired Programming With Product Owners
+
+![Two developers collaborating while one is coding](https://ik.imagekit.io/jferrell/pair-programming.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1677393939645)
+
+Traditional thinking of a paired programming session includes a [driver and a navigator](https://www.codecademy.com/resources/blog/what-is-pair-programming/). Where one person is writing code while the other observes and "keeps an eye on the bigger picture."
+What a state machine allows one to do is to have the driver be a programmer, but _anyone_ who understands the business flow
+can navigate.
+
+In the case of this project, I would screen share the visualization of the state machine and the product owner would describe
+what the next step of the process would be or what steps were available. I would update the machine, and then we would move
+to the next step. In a traditional method of development, these would be very complicated user stories that would try to
+describe the flow of the loan, and it would be very likely that something would get missed. Once a chunk of the machine was defined
+for example the underwriting step, we could show that to someone who was an expert in the approval process of a loan.
+
+By visualizing the business logic we were able to gather lots of feedback, and the time that would have been spent going back and forth
+and a product owner writing tickets was eliminated.
+
+Oh and did I mention that because state machines are deterministic, we were able to [generate tests](https://www.youtube.com/watch?v=pA3DXExjKqI)?
+
+## Learning More
+
+The state machine was implemented using XState and was highly performant.
+I highly recommend looking into the [XState documentation](https://xstate.js.org/docs/) to learn more about what you can do with state machines.
+You might even want to use them to power your business too!

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import { Box } from './box';
 import { Card } from './card';
@@ -25,7 +26,16 @@ const components = {
     />
   ),
   ul: (props: any) => (
-    <ul {...props} style={{ listStyle: 'disc', padding: '0 2rem' }} />
+    <ul {...props} style={{ listStyle: 'disc outside', padding: '0 1.5rem' }} />
+  ),
+  ol: (props: any) => (
+    <ol
+      {...props}
+      style={{ listStyle: 'number outside', padding: '0 1.5rem' }}
+    />
+  ),
+  li: (props: any) => (
+    <li {...props} style={{ lineHeight: '2rem', paddingLeft: '.8rem' }} />
   ),
   pre: (props: any) => (
     <pre
@@ -42,8 +52,8 @@ const components = {
   ),
   img: (props: any) => (
     // MDX should always contain image and alt text
-    // eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text
-    <img
+    // eslint-disable-next-line jsx-a11y/alt-text
+    <Image
       width={647}
       height={364}
       style={{

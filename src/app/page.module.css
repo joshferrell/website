@@ -1,35 +1,33 @@
-
 .main {
-    max-width: fit-content;
-    margin: 3rem auto;
+  max-width: fit-content;
+  margin: 3rem auto;
 
-    display: flex;
-    flex-direction: column;
-    gap: 3.0rem;
-    align-items: center;
-    
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+
+  text-align: center;
 }
 
 @media screen and (min-width: 810px) {
-    .main {
-        margin: 6rem auto;
-    }
+  .main {
+    margin: 6rem auto;
+  }
 }
 
 @media screen and (min-width: 1438px) {
-    .main {
-        margin: 10rem auto;
-    }
+  .main {
+    margin: 10rem auto;
+  }
 }
 
-
 .heading {
-    max-width: fit-content;
-    margin: 0 auto;
-    font-weight: 300;
-    font-size: 3rem;
-    text-align: center;
-    letter-spacing: .05rem;
-    line-height: 3.9rem;
+  max-width: fit-content;
+  margin: 0 auto;
+  font-weight: 300;
+  font-size: 3rem;
+  text-align: center;
+  letter-spacing: 0.05rem;
+  line-height: 3.9rem;
 }

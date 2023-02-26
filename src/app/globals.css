@@ -4,77 +4,180 @@
 */
 
 :root {
-	--background-background: #0d0d0d;
-	--background-surface-01: #0c0c0c;
-	--background-surface-02: #dbdbdb;
-	--text-primary: #eaeaea;
-	--text-secondary: #9d9d9d;
-	--text-inverted: #0d0d0d;
-	--border-primary: #7a7a7a;
-	--border-accent: #161616;
-	--link-primary: #78a9ff;
-	--link-primary-hover: #a6c8ff; 
+  --background-background: #0d0d0d;
+  --background-surface-01: #0c0c0c;
+  --background-surface-02: #393939;
+  --background-inverse: #f4f4f4;
+  --text-primary: #eaeaea;
+  --text-secondary: #9d9d9d;
+  --text-inverted: #0d0d0d;
+  --border-primary: #393939;
+  --border-accent: #161616;
+  --link-primary: #78a9ff;
+  --link-primary-hover: #a6c8ff;
+  --focus-outline: #0f62fe;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-background: #f4f4f4;
+    --background-surface-01: #ffffff;
+    --background-surface-02: #e0e0e0;
+    --background-inverse: #393939;
+    --text-primary: #161616;
+    --text-secondary: #525252;
+    --text-inverted: #ffffff;
+    --border-primary: #7a7a7a;
+    --border-accent: #161616;
+    --link-primary: #0f62fe;
+    --link-primary-hover: #0043ce;
+    --focus-outline: #0f62fe;
+  }
 }
 
 body {
-	background-color: var(--background-background);
-	color: var(--text-primary);
+  background-color: var(--background-background);
+  color: var(--text-primary);
 }
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	font-weight: 400;
-    font-size: 1rem;
-    line-height: 1.6rem;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.6rem;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 a {
-	color: var(--link-primary);
+  color: var(--link-primary);
 }
 
 a:hover {
-	color: var(--link-primary-hover);
+  color: var(--link-primary-hover);
 }
 
 /* override for dracula system to make accessible */
-.token.cdata, .token.comment, .token.doctype, .token.prolog {
+.token.cdata,
+.token.comment,
+.token.doctype,
+.token.prolog {
   color: #6a7cb5 !important;
 }

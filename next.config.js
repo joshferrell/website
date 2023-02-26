@@ -7,6 +7,15 @@ const nextConfig = {
     appDir: true,
     mdxRs: true,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'ik.imagekit.io',
+        pathname: '/jferrell/**',
+      },
+    ],
+  },
 };
 
 module.exports = withContentlayer(nextConfig);

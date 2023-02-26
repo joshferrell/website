@@ -13,8 +13,8 @@
 }
 
 .primary {
-  background-color: var(--background-surface-02);
-  border-color: var(--background-surface-02);
+  background-color: var(--background-inverse);
+  border-color: var(--background-inverse);
   color: var(--text-inverted);
 }
 
@@ -30,7 +30,7 @@
 
 .primary:focus {
   outline-offset: 0.2rem;
-  outline: 1px solid #0f62fe;
+  outline: 1px solid var(--focus-outline);
 }
 
 .secondary {
@@ -38,7 +38,7 @@
 }
 
 .secondary:hover {
-  border-color: var(--background-surface-02);
+  border-color: var(--border-accent);
   color: var(--text-primary);
 }
 

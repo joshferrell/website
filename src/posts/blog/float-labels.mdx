@@ -3,22 +3,23 @@ title: The problem with float labels
 date: 2023-02-22
 category: Web Design
 published: true
-image: /blog-photos/float-label.webp
+image: https://ik.imagekit.io/jferrell/float-label.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1677393939300
+socialImage: https://ik.imagekit.io/jferrell/float-label.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677393939145
 imageAlt: The float label form interaction by Matt D Smith
 summary: An analysis of the float label web design pattern and when to use.
 ---
 
-The float label was introduced as a new type of form interaction pattern by Matt D Smith. The design pattern quickly gained popularity and became widely used in web, but was mostly used in mobile designs.
+The float label was introduced as a new type of form interaction pattern by Matt D Smith. The design pattern quickly gained popularity and became widely used on the web, but was mostly used in mobile designs.
 
-Prior to the float label design, form inputs typically displayed the label above or beside the input field. The thinking was that putting labels to the left or above the input took up valuable real-estate and made it more difficult for users to remember what information is required for the form.
+Before the float label design, form inputs typically displayed the label above or beside the input field. The thinking was that putting labels to the left or above the input took up valuable real estate and made it more difficult for users to remember what information is required for the form.
 
 The float label intended to solve those problems by displaying the label inside the input field, and animating it to "float" above the input field when the user types in it or focuses on it.
 
 ## Adoption by Google
 
-![The original float label that material UI implemented with labels as placeholders and bars underneath the inputs](https://res.cloudinary.com/practicaldev/image/fetch/s--3YnB3_cj--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/xvp5hv3imi3t5em6e4yi.png)
+![The original float label that material UI implemented with labels as placeholders and bars underneath the inputs](https://ik.imagekit.io/jferrell/xvp5hv3imi3t5em6e4yi.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677394191422)
 
-In 2014, Google adopted the float label pattern for the Material Design language. Their goal was to "mimic the feel of pen and paper." At a time where Apple was pushing for [skeuomorphism](https://www.interaction-design.org/literature/topics/skeuomorphism) and Microsoft was making everything flat squares, Google found a happy medium.
+In 2014, Google adopted the float label pattern for the Material Design language. Their goal was to "mimic the feel of pen and paper." At a time when Apple was pushing for [skeuomorphism](https://www.interaction-design.org/literature/topics/skeuomorphism) and Microsoft was making everything flat squares, Google found a happy medium.
 
 Looking at the design of the form, it's clear where its inspiration came from. When filling out a form physically, there is a line that you write in. Boxes aren't used because, well people's handwriting sucks.
 
@@ -43,14 +44,14 @@ The design of the form seems simple, but are there any issues with it?
 ></iframe>
 
 Nielsen Norman has done [some research](https://www.nngroup.com/articles/form-design-placeholders/) on issues they have found with
-placeholders and form inputs. While float labels solve the issue of dissapearing labels when people used to rely _only_ on placeholders
-as their label, they still look like input filled in when doing a quick scan of a form.
+placeholders and form inputs. While float labels solve the issue of disappearing labels when people used to rely _only_ on placeholders
+as their labels, they still look like input filled in when doing a quick scan of a form.
 
 The other issue Nielsen Norman found is that inputs can sometimes look like data that was pre-filled, like a billing address being auto-populated because the shipping address is the same.
 
 ### No good space for hint text
 
-Libraries that use float labels typically have the help text appear in different ways. Some place them as tooltips next to the label. Material, puts them underneath the form input. Both of these solutions are problematic. Tooltips as help text is a strange experience and should be avoided. Tooltips should be keyboard accessible and having to tab into a tooltip breaks up the float of filling out information. If you're including information that helps users to fill out the form, let them see it!
+Libraries that use float labels typically have the help text appear in different ways. Some place them as tooltips next to the label. Material puts hint text underneath the form input. Both of these solutions are problematic. Tooltips as help text is a strange experience and should be avoided. Tooltips should be keyboard accessible and having to tab into a tooltip breaks up the float of filling out information. If you're including information that helps users to fill out the form, let them see it!
 
 Material and a few others place their help text under the input. However, this [can be problematic](https://adrianroselli.com/2017/01/avoid-messages-under-fields.html). What typically happens when an error message appears is that the help text gets replaced with the error message. What happens if you don't enter anything into the input? The error message might say, "Enter your phone number," but what's the format of the phone number needed? The other issue brought up by Adrian Roselli is that the help text also gets covered by autocomplete.
 
@@ -70,7 +71,7 @@ Appropriately sized inputs give users an affordance that only a certain number o
     margin: '0 auto',
   }}
   alt="Form with inputs of zip code with label slightly overflowing when in a non-floating state"
-  src="https://pbs.twimg.com/media/FVauKa8UcAA0jPW?format=png&name=240x240"
+  src="https://ik.imagekit.io/jferrell/FVauKa8UcAA0jPW.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677394191461"
 />
 
 ## Conclusion
