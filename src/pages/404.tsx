@@ -30,7 +30,7 @@ const Custom404 = () => {
         width: '100%',
       }}
     >
-      <header role="banner">
+      <header role="banner" style={{ position: 'relative', zIndex: '999999' }}>
         <a
           href="#skip"
           accessKey="s"
