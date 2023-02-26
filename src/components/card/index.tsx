@@ -69,6 +69,7 @@ type WorkProps = {
   title: string;
   category: string;
   description: string;
+  company?: string;
   url: string;
   image: {
     source: any;
@@ -81,6 +82,7 @@ export const WorkCard = ({
   category,
   url,
   description,
+  company,
   image,
 }: WorkProps) => (
   <Card href={url}>
@@ -92,6 +94,7 @@ export const WorkCard = ({
     </Box>
     <Box as="small" variant="small">
       {category}
+      {company && <>&nbsp;at {company}</>}
     </Box>
   </Card>
 );

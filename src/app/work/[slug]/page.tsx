@@ -69,12 +69,16 @@ const Page = async ({ params }: PropTypes) => {
     notFound();
   }
 
+  const subtitle = work.company
+    ? `${work.category} at ${work.company}`
+    : work.category;
+
   return (
     <Container
       image={{ src: work.image, alt: work.imageAlt }}
       title={work.title}
       backLink={{ href: '/work', text: 'Return to portfolio' }}
-      subtitle={work.category}
+      subtitle={subtitle}
     >
       <Mdx code={work.body.code} />
       {work.link && (

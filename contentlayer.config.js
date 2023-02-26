@@ -74,6 +74,11 @@ export const Work = defineDocumentType(() => ({
       description: 'The title of the post',
       required: true,
     },
+    company: {
+      type: 'string',
+      description: 'The company work was done for',
+      required: false,
+    },
     link: {
       type: 'string',
       description: 'URL of the project source',

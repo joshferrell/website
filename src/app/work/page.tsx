@@ -45,6 +45,7 @@ const Work = () => {
                 title={post.title}
                 description={post.summary}
                 category={post.category}
+                company={post.company}
                 image={{ source: post.image, alt: post.imageAlt }}
               />
             ))}
