@@ -4,10 +4,17 @@
   row-gap: 2rem;
   align-items: center;
   column-gap: 1.5rem;
+  padding: 0rem;
+  padding: 1.5rem;
+
+  @media (min-width: 600px) {
+    padding: 2rem;
+  }
 
   @media (min-width: 1024px) {
     column-gap: 2.5rem;
     margin-bottom: 0;
+    padding: 0;
   }
 }
 

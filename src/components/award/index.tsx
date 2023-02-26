@@ -1,7 +1,9 @@
 import Image from 'next/image';
 
-import { Box } from './box';
-import { Collapse } from './collapse';
+import { Box } from '../box';
+import { Collapse } from '../collapse';
+
+import styles from './award.module.css';
 
 type PropTypes = {
   name: string;
@@ -23,6 +25,7 @@ export const AwardToggle = ({
   const header = (
     <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
       <Image
+        className={styles.image}
         src={companyImageUrl}
         alt=""
         aria-hidden={true}
