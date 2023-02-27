@@ -4,9 +4,6 @@ The Personal website of Josh Ferrell with some thoughts and ideas peppered throu
 
 ## Todo List items
 
-- [ ] Improve type scale
-  - will need to increase max width most likely
-
 ### Article Ideas
 
 - [ ] Vanilla-Extract
@@ -24,7 +21,6 @@ The Personal website of Josh Ferrell with some thoughts and ideas peppered throu
 
 #### StateMachines
 
-- "Learn how I used XState state machines to streamline a solar loan approval process, simplifying complex business logic and improving collaboration between product owners and developers. #XState #stateMachines #development"
 - "Say goodbye to lengthy feedback loops and user stories. Learn how I used state machines in XState to simplify a solar loan approval process. #development #stateMachines #XState"
 
 ### Portfolio Page
