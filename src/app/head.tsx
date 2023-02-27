@@ -22,6 +22,7 @@ export default function Head() {
         href="/favicon-16x16.png"
       />
       <link rel="manifest" href="/site.webmanifest" />
+      <link href="https://mastodon.social/@norablindsided" rel="me" />
       <meta name="msapplication-TileColor" content="#0d0d0d" />
       <meta name="theme-color" content="#0d0d0d" />
 
