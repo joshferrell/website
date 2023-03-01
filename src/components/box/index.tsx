@@ -7,7 +7,7 @@ type ElementProps = Omit<
   'as' | 'color' | 'background'
 >;
 
-interface PropTypes extends ElementProps {
+export interface BoxProps extends ElementProps {
   variant?: 'title' | 'subtitle' | 'sectionTitle' | 'body' | 'small';
   as?: ElementType;
   color?: 'primary' | 'secondary' | 'inverted' | 'highlight';
@@ -21,7 +21,7 @@ export const Box = ({
   background = 'transparent',
   className,
   ...htmlAttributes
-}: PropTypes) => {
+}: BoxProps) => {
   const atomicClasses = classNames(
     styles[variant],
     styles[color],

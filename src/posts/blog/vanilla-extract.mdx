@@ -1,0 +1,61 @@
+---
+title: Why your design tokens should be strongly-typed
+date: 2023-02-28
+category: Design System
+published: false
+image: https://ik.imagekit.io/jferrell/float-label.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1677393939300
+socialImage: https://ik.imagekit.io/jferrell/float-label.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677393939145
+imageAlt: The float label form interaction by Matt D Smith
+summary: An analysis of the float label web design pattern and when to use.
+---
+
+In 2021, Mark Dalgleish released a follow-up to similar concepts he introduced in CSS Modules.
+With CSS Modules, a developer can write their styles [co-located to their code](https://kentcdodds.com/blog/colocation), and also have class names generated to avoid conflict with the rest of the stylesheet. While this loses the benefits of [dynamic CSS-based design](http://www.csszengarden.com/), it does allow for larger teams to not have to worry about conflicting styles cascading and overwriting them.
+
+## An improvement to CSS Modules
+
+Enter TypeScript. Now developers can reduce the number of bugs they introduce by strongly typing their JavaScript application by catching typos.
+
+> I like to consider type definitions with TypeScript to be a form of inline automated tests.
+>
+> -- [Kent C. Dodds](https://kentcdodds.com/blog/eliminate-an-entire-category-of-bugs-with-a-few-simple-tools#typescript)
+
+This went over really well in the JS community and this blog is written using TypeScript, but
+when it came to our styles, we were writing css using template literals, or css modules.
+
+```tsx
+// button.tsx
+import { styles } from 'styled-components';
+
+// typo: it's color :(
+const button = styles.button`
+    colour: blue;
+`;
+```
+
+```css
+/* button.module.css */
+
+.button {
+  /* another typo */
+  colour: blue;
+}
+```
+
+## TypeScript is testing
+
+While our component code, our state logic, functions, were all getting checked
+for static errors, our CSS was sitting...waiting...hoping. That one day we wouldn't
+have to visually refresh to make sure the right color was getting applied.
+
+## Enter Vanilla-Extract
+
+Vanilla-Extract does one minor thing to css modules that ends up being a _huge_ change.
+
+It adds a .ts to the end of the css file.
+
+Okay, maybe a few more things. But this is huge. I can write
+
+## Using Vanilla-Extract to define design tokens
+
+## It works everywhere!

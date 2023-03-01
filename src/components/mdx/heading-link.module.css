@@ -1,0 +1,9 @@
+.headingLink {
+  color: currentColor;
+  text-decoration: none;
+}
+
+.headingLink:hover {
+  color: var(--text-highlight);
+  text-decoration: underline;
+}

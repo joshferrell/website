@@ -1,4 +1,4 @@
-import { allBlogs } from 'contentlayer/generated';
+import { allBlogs, allWorks } from 'contentlayer/generated';
 import { compareDesc } from 'date-fns';
 
 import { Container } from '~/components/container';
@@ -13,12 +13,23 @@ const Blog = () => {
     .filter((post) => post.published)
     .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
 
+  const works = allWorks.filter((post) => post.published && post.showOnBlog);
+
   return (
     <Container title="Thoughts">
       {posts.map((post) => (
         <BlogCard
           key={post.slug}
           url={`/blog/${post.slug}`}
+          title={post.title}
+          category={post.category}
+          image={{ source: post.image, alt: post.imageAlt }}
+        />
+      ))}
+      {works.map((post) => (
+        <BlogCard
+          key={post.slug}
+          url={`/work/${post.slug}`}
           title={post.title}
           category={post.category}
           image={{ source: post.image, alt: post.imageAlt }}

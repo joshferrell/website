@@ -1,12 +1,22 @@
 import Image from 'next/image';
 import { useMDXComponent } from 'next-contentlayer/hooks';
-import { Box } from './box';
-import { Card } from './card';
+import { Box } from '../box';
+import { Card } from '../card';
+import { HeadingLink } from './heading-link';
+import React from 'react';
+import Link from 'next/link';
+
+const convertTextToId = (children: React.ReactNode) =>
+  children
+    ?.toString()
+    .toLowerCase()
+    .replace(/ /g, '-')
+    .replace(/[^\w-]+/g, '');
 
 const components = {
-  h1: (props: any) => <Box variant="title" as="h1" {...props} />,
-  h2: (props: any) => <Box variant="subtitle" as="h2" {...props} />,
-  h3: (props: any) => <Box variant="sectionTitle" as="h3" {...props} />,
+  h1: (props: any) => <HeadingLink variant="title" as="h1" {...props} />,
+  h2: (props: any) => <HeadingLink variant="subtitle" as="h3" {...props} />,
+  h3: (props: any) => <HeadingLink variant="sectionTitle" as="h3" {...props} />,
   p: (props: any) => (
     <Box
       variant={props.className === 'callout' ? 'subtitle' : 'body'}

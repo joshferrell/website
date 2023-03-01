@@ -1,5 +1,6 @@
 import { defineDocumentType, makeSource } from 'contentlayer/source-files';
-import rehypePrism from '@mapbox/rehype-prism';
+import rehypeRaw from 'rehype-raw';
+import remarkShikiTwoslash from 'remark-shiki-twoslash';
 
 const computedFields = {
   slug: {
@@ -73,6 +74,10 @@ export const Work = defineDocumentType(() => ({
       type: 'string',
       description: 'The title of the post',
       required: true,
+    },
+    showOnBlog: {
+      type: 'boolean',
+      description: 'Also display on blog',
     },
     company: {
       type: 'string',
@@ -203,10 +208,18 @@ export const Award = defineDocumentType(() => ({
   },
 }));
 
-export default makeSource({
-  contentDirPath: './src/posts',
-  documentTypes: [Blog, Work, Award, Testamonial],
-  mdx: {
-    rehypePlugins: [rehypePrism],
-  },
+export default makeSource(async () => {
+  // const highlighter = await shiki.getHighlighter({
+  //   theme: 'dark-plus',
+  //   langs: ['mdx', 'tsx', 'ts', 'js', 'css', 'html', 'jsx'],
+  // });
+
+  return {
+    contentDirPath: './src/posts',
+    documentTypes: [Blog, Work, Award, Testamonial],
+    mdx: {
+      remarkPlugins: [[remarkShikiTwoslash.default, { theme: 'dark-plus' }]],
+      rehypePlugins: [[rehypeRaw, { allowDangerousHtml: true }]],
+    },
+  };
 });
