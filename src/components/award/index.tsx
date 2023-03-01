@@ -12,12 +12,14 @@ type PropTypes = {
   code: string;
   companyImageUrl: string;
   isFeatured?: boolean;
+  blurUrl: string;
 };
 
 export const AwardToggle = ({
   name,
   company,
   year,
+  blurUrl,
   code,
   companyImageUrl,
   isFeatured = false,
@@ -28,6 +30,8 @@ export const AwardToggle = ({
         className={styles.image}
         src={companyImageUrl}
         alt=""
+        blurDataURL={blurUrl}
+        placeholder="blur"
         aria-hidden={true}
         width={75}
         height={75}

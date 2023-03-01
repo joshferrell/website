@@ -68,7 +68,7 @@ const Page = async ({ params }: PropTypes) => {
     <Container
       headerType="postHeader"
       backLink={{ href: '/blog', text: 'Return to blog' }}
-      image={{ src: blog.image, alt: blog.imageAlt }}
+      image={{ src: blog.image, alt: blog.imageAlt, blurUrl: blog.blurUrl }}
       title={blog.title}
       subtitle={blog.category}
     >

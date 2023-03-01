@@ -45,16 +45,29 @@ type BlogProps = {
   title: string;
   category: string;
   url: string;
+  blurUrl: string;
   image: {
     source: any;
     alt: string;
   };
 };
 
-export const BlogCard = ({ title, category, url, image }: BlogProps) => (
+export const BlogCard = ({
+  title,
+  blurUrl,
+  category,
+  url,
+  image,
+}: BlogProps) => (
   <Card href={url}>
     <div className={styles.imageContainer}>
-      <Image src={image.source} alt={image.alt} fill={true} />
+      <Image
+        blurDataURL={blurUrl}
+        placeholder="blur"
+        src={image.source}
+        alt={image.alt}
+        fill={true}
+      />
     </div>
     <Box as="h2" variant="sectionTitle">
       {title}
@@ -70,6 +83,7 @@ type WorkProps = {
   category: string;
   description: string;
   company?: string;
+  blurUrl: string;
   url: string;
   image: {
     source: any;
@@ -81,13 +95,20 @@ export const WorkCard = ({
   title,
   category,
   url,
+  blurUrl,
   description,
   company,
   image,
 }: WorkProps) => (
   <Card href={url}>
     <div className={styles.imageContainer}>
-      <Image src={image.source} alt={image.alt} fill={true} />
+      <Image
+        placeholder="blur"
+        blurDataURL={blurUrl}
+        src={image.source}
+        alt={image.alt}
+        fill={true}
+      />
     </div>
     <Box as="h3" variant="sectionTitle">
       {title}

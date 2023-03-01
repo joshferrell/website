@@ -17,6 +17,7 @@ const Blog = () => {
     <Container title="Thoughts">
       {posts.map((post) => (
         <BlogCard
+          blurUrl={post.blurUrl}
           key={post.slug}
           url={`/blog/${post.slug}`}
           title={post.title}

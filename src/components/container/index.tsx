@@ -14,6 +14,7 @@ type PropTypes = {
   image?: {
     src: string;
     alt: string;
+    blurUrl: string;
   };
   backLink?: {
     href: string;
@@ -28,6 +29,7 @@ type HeaderProps = {
   subtitle?: string;
   image?: {
     src: string;
+    blurUrl: string;
     alt: string;
   };
 };
@@ -70,6 +72,8 @@ const PostHeader = ({ title, subtitle, image }: HeaderProps) => (
       <Image
         src={image.src}
         alt={image.alt}
+        blurDataURL={image.blurUrl}
+        placeholder="blur"
         width={647}
         height={364}
         style={{

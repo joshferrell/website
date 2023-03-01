@@ -40,6 +40,7 @@ const Work = () => {
           <div className={style.portfolioList}>
             {posts.map((post) => (
               <WorkCard
+                blurUrl={post.blurUrl}
                 key={post.slug}
                 url={`/work/${post.slug}`}
                 title={post.title}
