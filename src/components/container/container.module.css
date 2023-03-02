@@ -1,6 +1,6 @@
 .main {
   max-width: 90rem;
-  margin: 3rem auto;
+  margin: 3rem auto 10rem;
   padding: 0 1rem;
   background-color: var(--background-background);
 }
@@ -11,12 +11,12 @@
 
 @media screen and (min-width: 810px) {
   .main {
-    margin: 6rem auto;
+    margin: 6rem auto 8rem;
   }
 }
 
 @media screen and (min-width: 1438px) {
   .main {
-    margin: 10rem auto;
+    margin: 10rem auto 8rem;
   }
 }
