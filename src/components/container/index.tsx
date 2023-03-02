@@ -76,6 +76,7 @@ const PostHeader = ({ title, subtitle, image }: HeaderProps) => (
         placeholder="blur"
         width={647}
         height={364}
+        quality={90}
         style={{
           borderRadius: '1rem',
           width: '100%',
