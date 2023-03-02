@@ -6,7 +6,12 @@ import { CardLink, Link } from '~/components/link';
 import profilePhoto from '../../public/josh-profile.webp';
 
 const Home = () => (
-  <main id="skip" role="main" className={styles.main}>
+  <main
+    id="skip"
+    role="main"
+    className={styles.main}
+    style={{ marginBottom: '2rem' }}
+  >
     <div className={styles.heading}>
       <Box as="h1" variant="title">
         Hey, I&apos;m&nbsp;
