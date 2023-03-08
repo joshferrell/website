@@ -21,7 +21,7 @@
   gap: 2.5rem;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   @media (min-width: 1024px) {
     flex-flow: row wrap;
     & > a {
