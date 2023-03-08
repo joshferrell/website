@@ -2,10 +2,12 @@ lockfileVersion: 5.4
 
 specifiers:
   '@mapbox/rehype-prism': ^0.8.0
+  '@types/common-tags': ^1.8.1
   '@types/node': 18.14.0
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
   classnames: ^2.3.2
+  common-tags: ^1.8.2
   contentlayer: ^0.3.0
   date-fns: ^2.29.3
   eslint: 8.34.0
@@ -24,6 +26,7 @@ specifiers:
 dependencies:
   '@mapbox/rehype-prism': 0.8.0
   classnames: 2.3.2
+  common-tags: 1.8.2
   contentlayer: 0.3.0
   date-fns: 2.29.3
   next: 13.2.1_wiv434v7erz4aedd5whhdwmpv4
@@ -34,6 +37,7 @@ dependencies:
   sharp: 0.31.3
 
 devDependencies:
+  '@types/common-tags': 1.8.1
   '@types/node': 18.14.0
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
@@ -955,6 +959,10 @@ packages:
       '@types/estree': 1.0.0
     dev: false
 
+  /@types/common-tags/1.8.1:
+    resolution: {integrity: sha512-20R/mDpKSPWdJs5TOpz3e7zqbeCNuMCPhV7Yndk9KU2Rbij2r5W4RzwDPkzC+2lzUqXYu9rFzTktCBnDjHuNQg==}
+    dev: true
+
   /@types/debug/4.1.7:
     resolution: {integrity: sha512-9AonUzyTjXXhEOa0DnqpzZi6VHlqKMswga9EXjpXnnqxwLtdvPPtlO8evrI5D9S6asFRCQ6v+wpiUKbw+vKqyg==}
     dependencies:
@@ -1643,6 +1651,11 @@ packages:
       esprima: 4.0.1
       has-own-prop: 2.0.0
       repeat-string: 1.6.1
+    dev: false
+
+  /common-tags/1.8.2:
+    resolution: {integrity: sha512-gk/Z852D2Wtb//0I+kRFNKKE9dIIVirjoqPoA1wJU+XePVXZfGeBpk45+A1rKO4Q43prqWBNY/MiIeRLbPWUaA==}
+    engines: {node: '>=4.0.0'}
     dev: false
 
   /concat-map/0.0.1:

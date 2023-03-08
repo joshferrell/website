@@ -11,6 +11,7 @@
   "dependencies": {
     "@mapbox/rehype-prism": "^0.8.0",
     "classnames": "^2.3.2",
+    "common-tags": "^1.8.2",
     "contentlayer": "^0.3.0",
     "date-fns": "^2.29.3",
     "next": "13.2.1",
@@ -21,6 +22,7 @@
     "sharp": "^0.31.3"
   },
   "devDependencies": {
+    "@types/common-tags": "^1.8.1",
     "@types/node": "18.14.0",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
