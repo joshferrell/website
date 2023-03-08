@@ -55,6 +55,10 @@ export const GET = async () => {
     `;
 
 
-    return new Response(sitemap);
+    return new Response(sitemap, {
+        headers: {
+            'content-type': 'application/xml'
+        }
+    });
 }
 

@@ -3,4 +3,8 @@ export const GET = async() => new Response(`
     Allow: /
 
     Sitemap: https://www.joshferrell.me/sitemap.xml
-`); 
+`, {
+    headers: {
+        'content-type': 'text/plain'
+    }
+}); 
