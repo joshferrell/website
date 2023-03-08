@@ -30,13 +30,13 @@ It was August, and I flew out for a week to a company I had just joined called M
 
 They had a previously successful product called ProofMe and wanted to embed that project into their new application. Embedding the app was easier said than done because the two applications had completely different architectures. MFactor was a React-based SPA application, and ProofMe was a complex MVC .NET app with file conversion and rendering logic. Unfortunately, the entire team that initially worked on ProofMe had left.
 
-The first day I found out that they had _just_ gotten the product working in a developer environment, and with two months to go for our major launch, I had concerns about meeting such a tight deadline.
+On my first day, I found out that they had _just_ gotten the product working in a developer environment. With two months to go for our major launch, I had concerns about meeting such a tight deadline.
 
 ## Thinking Outside the Box
 
 ![Google map screenshot with multiple pins on the map](https://ik.imagekit.io/jferrell/image-pyramid.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1678149827086)
 
-It's easy when approaching a problem to get trapped in one solution. ProofMe was built using a canvas rendering tool with custom drag and zoom controls. Tracking where comments and annotations were and placing them on top of the file was complicated since it needed to stay in place when a user was zooming in.
+It's easy when approaching a problem to get trapped into one solution. ProofMe was built using a canvas rendering tool with custom drag and zoom controls. Tracking where comments and annotations were and placing them on top of the file was complicated since it needed to stay in place when a user was zooming in.
 
 One of the critical features that ProofMe did was optimize image rendering so that a large file didn't need to get sent to the client, and as the user zoomed, a higher fidelity image could be sent down.
 
@@ -46,16 +46,16 @@ On my flight home, I was thinking about how this could be simplified, and I real
 
 So I built a quick proof of concept with a few things I needed to solve out of the gate:
 
-- Can I render images using the same pattern Google Maps does?
-- Can I convert images to that format?
-- Can I have drawings and comment placement tracked using a coordinate system?
+- Could I render images using the same pattern Google Maps does?
+- Could I convert images to that format?
+- Could I have drawings and comment placement tracked using a coordinate system?
 
-Using [https://leafletjs.com/](Leaflet) and React, I quickly built a demo showing that this could work, and the Monday after my flight home, I showed the CTO the demo of what I had made.
+Using [Leaflet](https://leafletjs.com/) and React, I quickly built a demo showing that this could work. The Monday after my flight home, I showed the CTO the demo of what I had made.
 
 ## The Result
 
 ![Painting of the farmer being compared where window was removed in different version](https://ik.imagekit.io/jferrell/farmer-compare.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1678149826542)
 
-We ended up using my solution for a few reasons. The big one is that because the new product was built in React, we could easily embed the React-based proofer as a component. Since we were building everything from scratch, we also had a deeper understanding of everything, so adding new features was far less complex. Because we were building off of a popular mapping library, we could launch with many features that have existed in the mapping space for a long time that would have had to be built completely custom.
+We ended up using my solution for a few reasons. The big one is that because the new product was built in React, we could easily embed the React-based proofer as a component. Since we were building everything from scratch, we also had a deeper understanding of how the new proofer worked, so adding new features was far less complex. By building off of a popular mapping library, we could launch many features that have existed in the mapping space for a long time that otherwise would need to be built completely custom.
 
-We launched two months later at Adobe MAX with video and image comparison with a slider to compare differences and a highlight changes function. We even had frame-by-frame annotation, allowing directors or CG artists to get feedback on particular effects for a specific moment.
+We launched two months later at Adobe MAX with, video comparison, image comparison, a slider to compare differences, and a tool to highlight changes. We even had frame-by-frame annotation, allowing directors and digital artists to get feedback on particular effects for a specific moment in video projects.
