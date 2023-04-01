@@ -1,0 +1,156 @@
+---
+title: Boost Accessibility Confidence with Contrast Testing Techniques
+date: 2023-04-01
+category: Accessibility
+published: true
+image: https://ik.imagekit.io/jferrell/cookie-the-pom-gySMaocSdqs-unsplash.jpg?updatedAt=1680333000902
+socialImage: https://ik.imagekit.io/jferrell/automated-contrast-testing-social.png?updatedAt=1680333000992
+blurUrl: data:image/webp;base64,UklGRiQCAABXRUJQVlA4WAoAAAAgAAAAWAAAMQAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAAAAAAAAAAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZWUDggNgAAABAEAJ0BKlkAMgA/cbjXZLSuqychaAKQLglpAAALMiRMlMBGge2je+QwAP7taMK6MGwa00qAAA==
+imageAlt: Dog with glasses reading an iPad
+summary: Boost web accessibility with automated contrast testing, color-checked design tokens, pseudo-class visual testing, and smart Box component props.
+---
+
+Let's talk about automated accessibility testing. While it's true that automated tools won't catch
+everything, they can do a fantastic job at preventing many errors from sneaking into your website. Plus,
+there are some super useful patterns you can implement into your components to help reduce accessibility violations.
+
+## Making Design Tokens Color-Checked
+
+[Design tokens](https://bradfrost.com/blog/post/extending-atomic-design/) come in handy within design systems as they allow developers and designers to quickly access named values that can be swapped out like variables. For example, instead of using `#FFFFFF`, you might use `var(--background)` which can then be set in the CSS root. Designers can easily access these tokens in Figma using design token plugins. This approach is not only useful for dark and light modes, but it also makes your design more adaptable, as changing the token will propagate across all its usages.
+
+Imagine you're working with a color system similar to IBM's Carbon. They seperate background and text into two distinct categories. Thus, the styling of a component might look like this:
+
+```css
+.box {
+  background-color: var(--background);
+  color: var(--text-primary);
+}
+```
+
+Now let's create some tests to ensure our text and background tokens will always maintain valid contrast.
+
+```ts
+// @filename: token.ts
+export const color = {
+  'text-primary': '#f4f4f4',
+  'text-secondary': '#c6c6c6',
+  'text-placeholder': '#6f6f6f',
+  'text-helper': '#8d8d8d',
+  'text-error': '#ff8389',
+};
+
+export const background = {
+  background: '#161616',
+  brand: '#0f62fe',
+  'surface-01': '#262626',
+  'surface-02': '#393939',
+  'surface-03': '#525252',
+};
+
+// @filename: token.spec.ts
+import { describe, test } from 'vitest';
+import ColorContrastChecker from 'color-contrast-checker';
+import { color, background } from './token.ts';
+
+describe('design tokens', () => {
+  const cc = new ColorContrastChecker();
+  Object.entries(background).forEach(([bgName, bgValue]) => {
+    Object.entries(color).forEach(([colorName, colorValue]) => {
+      test(`Contrast between background:${bgName} and color:${colorName} should pass AA`, ({
+        expect,
+      }) => {
+        const isContrastSufficient = cc.isLevelAA(colorValue, bgValue, 14);
+        expect(isContrastSufficient).toBe(true);
+      });
+    });
+  });
+});
+```
+
+After running our tests, we might see some contrast errors, in this case, the `surface-02` background does not have sufficient contrast with the `text-helper`. This could be problematic if we ever put a form with help text on that background.
+
+## Add Visual Testing to Psuedo-classes
+
+A frequent oversight in visual testing is not accounting for a component's pseudo-class. For instance, consider a button component; a typical [Storybook](storybook.js.org/) story might display just the button and its disabled state. However, we're overlooking how the button should appear when focused, hovered, or pressed. Sure, someone could manually validate that the hover state text and background has sufficient contrast, but that's not very efficient. Additionally, if the button's background color changes, we might like to make sure that there's a visual difference between being hovered and not.
+
+To tackle this, let's use a package called [storybook-addon-pseudo-states](https://storybook.js.org/addons/storybook-addon-pseudo-states). After installing the addon and adding it to our `.storybook/main.js`, we can define a story with a default pseudo-state.
+
+```tsx
+export const HoverButton: Story = {
+  render: () => <Button label="Hello" />,
+  parameters: { pseudo: { hover: true } },
+};
+```
+
+This approach has several advantages:
+
+1. We can now easily track hover state changes visually
+2. Design can verify that the button looks as expected during validation
+3. We can confidently ensure that even on hover, our button maintains excellent contrast
+
+## Being Smart With Props
+
+One of my favorite design system patterns involves creating a Box component that allows style access via props. Libraries like [theme-ui](https://theme-ui.com/components/box) and [chakra-ui](https://chakra-ui.com/docs/components/box/usage) showcase this pattern, enabling code like this:
+
+```tsx
+<Box bg="surface-01" color="text-primary">
+  This is the box
+</Box>
+```
+
+With this Box component, since we can control the available colors for background and text, we can ensure that they always maintain good contrast. We'll simplify things in this example, but in real-world scenarios, you'd typically consume tokens.
+
+```tsx
+type BackgroundColorTokens =
+  | 'background'
+  | 'brand'
+  | 'surface-01'
+  | 'surface-02'
+  | 'surface-03';
+
+type TextColorTokens =
+  | 'text-primary'
+  | 'text-secondary'
+  | 'text-placeholder'
+  | 'text-helper'
+  | 'text-error';
+
+const colorValues: { [TokenName in TextColorTokens]: string } = {
+  'text-primary': '#f4f4f4',
+  'text-secondary': '#c6c6c6',
+  'text-placeholder': '#6f6f6f',
+  'text-helper': '#8d8d8d',
+  'text-error': '#ff8389',
+};
+
+const backgroundValues: { [TokenName in BackgroundColorTokens]: string } = {
+  background: '#161616',
+  brand: '#0f62fe',
+  'surface-01': '#262626',
+  'surface-02': '#393939',
+  'surface-03': '#525252',
+};
+
+interface BoxProps {
+  background: BackgroundColorTokens;
+  color: TextColorTokens;
+  children: React.ReactNode;
+}
+
+export const Box = ({ color, background, children }: BoxProps) => (
+  <div
+    style={{
+      background: backgroundValues[background],
+      color: colorValues[color],
+    }}
+  >
+    {children}
+  </div>
+);
+```
+
+By adhering to the steps outlined in [Making Design Tokens Color-Checked](#making-design-tokens-color-checked), we can confidently ensure that our Box component will always provide proper contrast.
+
+## Conclusion
+
+By incorporating these strategies into your projects, you can significantly improve accessibility compliance and reduce the chance of violations. Remember, automation can be a powerful ally in maintaining accessible designs, and with the right patterns in place, you can build components that are both visually stunning and accessible to all users. So, go ahead and give your components the confidence boost they deserve!

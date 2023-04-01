@@ -1,5 +1,6 @@
 import { defineDocumentType, makeSource } from 'contentlayer/source-files';
 import rehypeRaw from 'rehype-raw';
+import { nodeTypes } from '@mdx-js/mdx';
 import remarkShikiTwoslash from 'remark-shiki-twoslash';
 
 const computedFields = {
@@ -208,18 +209,11 @@ export const Award = defineDocumentType(() => ({
   },
 }));
 
-export default makeSource(async () => {
-  // const highlighter = await shiki.getHighlighter({
-  //   theme: 'dark-plus',
-  //   langs: ['mdx', 'tsx', 'ts', 'js', 'css', 'html', 'jsx'],
-  // });
-
-  return {
-    contentDirPath: './src/posts',
-    documentTypes: [Blog, Work, Award, Testamonial],
-    mdx: {
-      remarkPlugins: [[remarkShikiTwoslash.default, { theme: 'dark-plus' }]],
-      rehypePlugins: [[rehypeRaw, { allowDangerousHtml: true }]],
-    },
-  };
+export default makeSource({
+  contentDirPath: './src/posts',
+  documentTypes: [Blog, Work, Award, Testamonial],
+  mdx: {
+    remarkPlugins: [[remarkShikiTwoslash.default, { theme: 'dark-plus' }]],
+    rehypePlugins: [[rehypeRaw, { passThrough: nodeTypes }]],
+  }
 });
