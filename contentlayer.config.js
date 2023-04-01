@@ -229,7 +229,7 @@ export default makeSource({
   contentDirPath: './src/posts',
   documentTypes: [Blog, Work, Award, Testamonial],
   mdx: {
-    remarkPlugins: [[remarkShikiTwoslash.default, { theme: 'dark-plus' }]],
+    remarkPlugins: [[remarkShikiTwoslash.default, { theme: 'github-dark' }]],
     rehypePlugins: [[rehypeRaw, { passThrough: nodeTypes }]],
-  }
+  },
 });
