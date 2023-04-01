@@ -22,10 +22,6 @@ export const generateMetadata = ({ params }: PropTypes): Metadata => {
 
   const url = `https://www.joshferrell.me/work/${params.slug}`;
 
-  const imageUrl = work.image.includes('https://')
-    ? work.image
-    : `https://www.joshferrell.me${work.image.replace('.webp', '.png')}`;
-
   return {
     title: `Josh Ferrell | ${work.title}`,
     alternates: {
@@ -75,7 +71,7 @@ const Page = async ({ params }: PropTypes) => {
 
   return (
     <Container
-      image={{ src: work.image, alt: work.imageAlt }}
+      image={{ src: work.image, alt: work.imageAlt, blurUrl: work.blurUrl }}
       title={work.title}
       headerType="postHeader"
       backLink={{ href: '/work', text: 'Return to portfolio' }}

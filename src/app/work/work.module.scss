@@ -3,13 +3,13 @@
   flex-direction: column;
   gap: 2rem;
 
-  @media (max-width: 1023px) {
-    figure {
-      background-color: var(--background-surface-01);
-      border: 1px solid var(--border-accent);
-      border-radius: 1.5rem;
-    }
-  }
+  // @media (max-width: 1023px) {
+  //   figure {
+  //     background-color: var(--background-surface-01);
+  //     border: 1px solid var(--border-accent);
+  //     border-radius: 1.5rem;
+  //   }
+  // }
 
   @media (min-width: 1024px) {
     gap: 0;
@@ -22,8 +22,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 2rem;
+
+  & > a {
+    width: 100%;
+  }
+
   @media (min-width: 1024px) {
     flex-flow: row wrap;
+    align-items: stretch;
     & > a {
       flex-basis: 40%;
     }

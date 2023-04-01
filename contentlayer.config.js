@@ -25,6 +25,11 @@ export const Blog = defineDocumentType(() => ({
       description: 'Is the article ready to be listed',
       required: true,
     },
+    blurUrl: {
+      type: 'string',
+      description: 'Blur url of the photo',
+      required: true,
+    },
     category: {
       type: 'string',
       description: 'The type of category',
@@ -76,9 +81,10 @@ export const Work = defineDocumentType(() => ({
       description: 'The title of the post',
       required: true,
     },
-    showOnBlog: {
-      type: 'boolean',
-      description: 'Also display on blog',
+    blurUrl: {
+      type: 'string',
+      description: 'Blur url of the photo',
+      required: true,
     },
     company: {
       type: 'string',
@@ -151,6 +157,11 @@ export const Testamonial = defineDocumentType(() => ({
       description: 'The company the person works for',
       required: true,
     },
+    blurUrl: {
+      type: 'string',
+      description: 'The blur data url for the photo',
+      required: true,
+    },
     isHidden: {
       type: 'boolean',
       description: 'Hide the testamonial from displaying',
@@ -185,6 +196,11 @@ export const Award = defineDocumentType(() => ({
       description: 'The award is featured prominently',
       default: false,
       required: false,
+    },
+    blurUrl: {
+      type: 'string',
+      description: 'Blur url of the photo',
+      required: true,
     },
     isHidden: {
       type: 'boolean',

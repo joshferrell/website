@@ -15,15 +15,9 @@ const convertTextToId = (children: React.ReactNode) =>
 
 const components = {
   h1: (props: any) => <HeadingLink variant="title" as="h1" {...props} />,
-  h2: (props: any) => <HeadingLink variant="subtitle" as="h3" {...props} />,
+  h2: (props: any) => <HeadingLink variant="subtitle" as="h2" {...props} />,
   h3: (props: any) => <HeadingLink variant="sectionTitle" as="h3" {...props} />,
-  p: (props: any) => (
-    <Box
-      variant={props.className === 'callout' ? 'subtitle' : 'body'}
-      as="p"
-      {...props}
-    />
-  ),
+  p: (props: any) => <Box variant="body" as="p" {...props} />,
   strong: (props: any) => <strong {...props} style={{ fontWeight: 'bold' }} />,
   em: (props: any) => <em {...props} style={{ fontStyle: 'italic' }} />,
   br: () => <br />,

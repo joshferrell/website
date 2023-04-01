@@ -1,0 +1,61 @@
+---
+title: Solving Image Proofing Using out of the Box Thinking
+date: 2023-03-08
+published: true
+company: MetaCommunications
+category: Front-end
+blurUrl: data:image/webp;base64,UklGRpAEAABXRUJQVlA4WAoAAAAgAAAAVwEA1AAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAAAAAAAAAAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZWUDggogIAABAjAJ0BKlgB1QA+7XKwUymytCKlNJrigB2JaW7gA/H/+Ri6g4rXs0n6XnTEAophkh/hkDMatZwPuUpo0rberijg3oD602Kbu344l/5HhkCudo2A0Vq1oFh/f9cCyPn+gmFt3jlaBVd2+VxlzjMEeWCYW4VOKwNhQ0BKApiDXd5RGTyWG/D6gaED9p4AHbpwyyQTC27xysCqCN3mQdnzsRI19g7J9rkkvrjvJvxvPCHzIgEqiF1GLq8yfnpzjsZEb5VSVpoXlmZ+EsOp3KVQNJlUpuyHLAixq0omP3U0ad71e/N9K75zQ/wpaXI0pyU9wQtIwReEGvktKhnZThPkhDehkpyU5J5EbIkHhA+KJACouGwMgtZ5DJT3/RaRmPThsQAA/uvZSL03lfgbl9BdynQzqD3CBklVVCalTQnL7xkKQvZHvMkrVJW1xlOVhsJvaaoaellTRfOD+orodQO01oK4oMEOINUax3xBGBKaGCxRqABRL0lv6OR8euq8u66Rt9YPRo94LK5ZEyhVQGOC6X02pop98Mwsv3jg+0XAQOobwsA87S8vf/keST7uwBgvVF08vq8Xbwer+OxIu6X3NYvIFG8wxM2WVb8XoxE4SwaXIE04jbQiG1C5PpYJqdm05kPSTdFxiRbiu/zFpASQMlVgQUSRc2AWkcgTHwNn3PYn3ZcXTVx0vNmaZRI2RXqGMjdiAouCJ/btTcoWYJSPRoMyOAKEwQrNx6zfItrKtiJWZQzr2PoltUGbpuScl2RW23HAr8fRfzg5V0CSOehXbMTDf9JZ02HRgKOD5hJyoyiG1Ij6yMLhYJHdv+hlfBJiN39yQnKgSzMRkIICF3RQ3MtmrOO2xxDc7Id2aSPZyB3kNIE6jPuWt2aVNzBp1yAAAAAA
+image: https://ik.imagekit.io/jferrell/farmer-highlight.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1678149827187
+socialImage: https://ik.imagekit.io/jferrell/image-proofing-social.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678150798223
+imageAlt: Painting of the farmer being compared where window was removed in different version.
+summary: Building an image-proofing platform in two months using Leaflet and React.
+link: https://workgroups.com
+---
+
+## The Situation
+
+It was August, and I flew out for a week to a company I had just joined called MetaCommunications. They were working on a new product called MFactor with a launch date of October for the Adobe MAX conference. The product was a proofer, essentially an Invision for graphic designers where designers could upload images they had worked on and get client feedback.
+
+<video
+  width="647"
+  height="400"
+  controls
+  style={{ width: '100%', height: 'auto' }}
+>
+  <source
+    src="https://ik.imagekit.io/jferrell/proofme-demo.mp4?ik-sdk-version=javascript-1.4.3&updatedAt=1678149918174"
+    type="video/mp4"
+  />
+</video>
+
+They had a previously successful product called ProofMe and wanted to embed that project into their new application. Embedding the app was easier said than done because the two applications had completely different architectures. MFactor was a React-based SPA application, and ProofMe was a complex MVC .NET app with file conversion and rendering logic. Unfortunately, the entire team that initially worked on ProofMe had left.
+
+On my first day, I found out that they had _just_ gotten the product working in a developer environment. With two months to go for our major launch, I had concerns about meeting such a tight deadline.
+
+## Thinking Outside the Box
+
+![Google map screenshot with multiple pins on the map](https://ik.imagekit.io/jferrell/image-pyramid.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1678149827086)
+
+It's easy when approaching a problem to get trapped into one solution. ProofMe was built using a canvas rendering tool with custom drag and zoom controls. Tracking where comments and annotations were and placing them on top of the file was complicated since it needed to stay in place when a user was zooming in.
+
+One of the critical features that ProofMe did was optimize image rendering so that a large file didn't need to get sent to the client, and as the user zoomed, a higher fidelity image could be sent down.
+
+On my flight home, I was thinking about how this could be simplified, and I realized that mapping technology shared a lot of similarities with file proofing. You can place markers and drawings on a map, which sticks to a coordinate system. When you open a Google Satellite map, it increases to a higher fidelity image as you zoom in.
+
+![Image that gets lower in quality as zoom level decreases](https://ik.imagekit.io/jferrell/google-map.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1678149827528)
+
+So I built a quick proof of concept with a few things I needed to solve out of the gate:
+
+- Could I render images using the same pattern Google Maps does?
+- Could I convert images to that format?
+- Could I have drawings and comment placement tracked using a coordinate system?
+
+Using [Leaflet](https://leafletjs.com/) and React, I quickly built a demo showing that this could work. The Monday after my flight home, I showed the CTO the demo of what I had made.
+
+## The Result
+
+![Painting of the farmer being compared where window was removed in different version](https://ik.imagekit.io/jferrell/farmer-compare.webp?ik-sdk-version=javascript-1.4.3&updatedAt=1678149826542)
+
+We ended up using my solution for a few reasons. The big one is that because the new product was built in React, we could easily embed the React-based proofer as a component. Since we were building everything from scratch, we also had a deeper understanding of how the new proofer worked, so adding new features was far less complex. By building off of a popular mapping library, we could launch many features that have existed in the mapping space for a long time that otherwise would need to be built completely custom.
+
+We launched two months later at Adobe MAX with, video comparison, image comparison, a slider to compare differences, and a tool to highlight changes. We even had frame-by-frame annotation, allowing directors and digital artists to get feedback on particular effects for a specific moment in video projects.

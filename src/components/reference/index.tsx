@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import { Box } from '../box';
 import { Card } from '../card';
 import styles from './reference.module.scss';
@@ -8,12 +10,14 @@ type PropTypes = {
   profilePhotoUrl: string;
   title: string;
   code: string;
+  blurUrl: string;
 };
 
 export const Reference = ({
   name,
   company,
   profilePhotoUrl,
+  blurUrl,
   title,
   code,
 }: PropTypes) => (
@@ -32,7 +36,15 @@ export const Reference = ({
       className={styles.blockquote}
       dangerouslySetInnerHTML={{ __html: code }}
     />
-    <img className={styles.profile} src={profilePhotoUrl} alt="" />
+    <Image
+      className={styles.profile}
+      width={288}
+      height={288}
+      blurDataURL={blurUrl}
+      placeholder="blur"
+      src={profilePhotoUrl}
+      alt=""
+    />
     <figcaption className={styles.figcaption}>
       <div style={{ fontWeight: 'bold' }}>{name}</div>
       <Box color="secondary">
