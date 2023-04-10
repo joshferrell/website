@@ -44,7 +44,7 @@ const Contact = () => {
             <ButtonLink
               isExternal={true}
               variant="secondary"
-              href="https://calendly.com/joshferrell"
+              href="https://cal.com/joshferrell"
             >
               Have a call
             </ButtonLink>
