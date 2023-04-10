@@ -26,7 +26,7 @@ const components = {
       as="blockquote"
       variant="callout"
       {...props}
-      style={{ textAlign: 'left' }}
+      style={{ textAlign: 'left', padding: '1.5rem' }}
     />
   ),
   ul: (props: any) => (
