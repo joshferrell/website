@@ -8,7 +8,8 @@ import profilePhoto from '../../public/josh-profile.webp';
 const Home = () => (
   <main id="skip" role="main" className={styles.main}>
     <div className={styles.heading}>
-      <Box as="h1" variant="title">
+      <h1 className="sr-only">Josh Ferrell</h1>
+      <Box className="not-sr-only" variant="title">
         Hey, I&apos;m&nbsp;
         <Image
           src={profilePhoto}

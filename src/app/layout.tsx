@@ -21,15 +21,15 @@ const fira = Fira_Code({
 export const metadata: Metadata = {
   title: 'Josh Ferrell',
   description:
-    'Josh Ferrell, Staff Software Engineer specializing in front-end software development. Follow blog for design system and Javscript news',
+    'Staff software engineer with 10+ years of experience and expertise in React.js, TypeScript, and CSS. Follow blog for design system and JavaScript news.',
   keywords: 'Design Systems, React, Software Engineer, Typescript, Javascript',
   twitter: {
     card: 'summary_large_image',
-    title: 'Joshua Ferrell | Design Systems and Front-end Technical Lead',
+    title: 'Josh Ferrell | Design Systems and Front-end Technical Lead',
     creator: '@norablindsided',
     site: '@norablindsided',
     description:
-      'Staff Software Engineer specializing in front-end software development. Follow blog for design system and Javscript news',
+      'Staff software engineer with 10+ years of experience and expertise in React.js, TypeScript, and CSS. Follow blog for design system and JavaScript news.',
     images: {
       url: 'https://www.joshferrell.me/social-image.png',
       alt: 'Josh Ferrell, staff software engineer',
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Josh Ferrell',
     description:
-      'Josh Ferrell, staff software engineer specializing in front-end software development. Follow blog for design and Javascript news',
+      'Staff software engineer with 10+ years of experience and expertise in React.js, TypeScript, and CSS. Follow blog for design system and JavaScript news.',
     url: 'https://www.joshferrell.me',
     siteName: 'Josh Ferrell',
     images: [

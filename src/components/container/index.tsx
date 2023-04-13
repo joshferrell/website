@@ -66,7 +66,7 @@ const PostHeader = ({ title, subtitle, image }: HeaderProps) => (
       variant="sectionTitle"
       style={{ marginTop: '1.5rem' }}
     >
-      By Joshua Ferrell
+      By Josh Ferrell
     </Box>
     {image && (
       <Image
