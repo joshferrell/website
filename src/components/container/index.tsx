@@ -92,7 +92,7 @@ export const Container = ({
   title,
   subtitle,
   headerType = 'header',
-  hideCTA = false,
+  hideCTA,
   image,
   fullWidth = false,
   backLink,
@@ -103,6 +103,11 @@ export const Container = ({
     subtitle,
     image,
   };
+
+  const showCTA =
+    hideCTA !== undefined
+      ? !hideCTA
+      : process.env.NEXT_PUBLIC_OPEN_TO_WORK === 'true';
 
   return (
     <main
@@ -135,7 +140,7 @@ export const Container = ({
       >
         {children}
       </section>
-      {!hideCTA && <CTA />}
+      {showCTA && <CTA />}
     </main>
   );
 };

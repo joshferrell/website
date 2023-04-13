@@ -25,9 +25,17 @@ const Work = () => {
 
   return (
     <Container title="Experience" fullWidth={true}>
-      <CardLink isExternal={true} href="/joshua-ferrell-resume.pdf">
-        Download my full resume
-      </CardLink>
+      <p style={{ maxWidth: '40.5rem', margin: '0 auto' }}>
+        Staff software engineer with 10+ years of experience and expertise in
+        React.js, TypeScript, and CSS. Proven technical leader in design
+        systems, committed to promoting best practices and guiding teams towards
+        impactful work. Passionate about visual design craft, mentorship, and
+        fostering collaboration across cross-functional teams.
+      </p>
+      {process.env.NEXT_PUBLIC_OPEN_TO_WORK === 'true' && (
+        <CardLink href="/resume">View my full resume</CardLink>
+      )}
+
       {Boolean(posts.length) && (
         <section>
           <Box

@@ -32,7 +32,6 @@ export const Reference = ({
   >
     <Box
       as="blockquote"
-      variant="sectionTitle"
       className={styles.blockquote}
       dangerouslySetInnerHTML={{ __html: code }}
     />
