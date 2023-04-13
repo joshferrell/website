@@ -1,4 +1,4 @@
-import { Manrope } from 'next/font/google';
+import { Fira_Code, Manrope } from 'next/font/google';
 import Script from 'next/script';
 import type { Metadata } from 'next';
 
@@ -8,6 +8,13 @@ import './globals.css';
 
 const manrope = Manrope({
   weight: 'variable',
+  subsets: ['latin'],
+});
+
+const fira = Fira_Code({
+  weight: 'variable',
+  variable: '--font-code',
+  display: 'swap',
   subsets: ['latin'],
 });
 
@@ -66,7 +73,7 @@ export default function RootLayout({
         as="body"
         color="primary"
         background="background"
-        className={manrope.className}
+        className={`${manrope.className} ${fira.variable}`}
       >
         <header role="banner">
           <a
@@ -99,10 +106,10 @@ export default function RootLayout({
         {children}
       </Box>
       <Script
-        strategy="afterInteractive"
+        strategy="lazyOnload"
         src="https://www.googletagmanager.com/gtag/js?id=G-7XXK5WVPW1"
       />
-      <Script id="google-analytics" strategy="afterInteractive">
+      <Script id="google-analytics" strategy="lazyOnload">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}

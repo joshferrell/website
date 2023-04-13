@@ -1,17 +1,15 @@
 import Image from 'next/image';
+import { Fira_Code } from 'next/font/google';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import { Box } from '../box';
 import { Card } from '../card';
 import { HeadingLink } from './heading-link';
 import React from 'react';
-import Link from 'next/link';
 
-const convertTextToId = (children: React.ReactNode) =>
-  children
-    ?.toString()
-    .toLowerCase()
-    .replace(/ /g, '-')
-    .replace(/[^\w-]+/g, '');
+const fira = Fira_Code({
+  weight: 'variable',
+  subsets: ['latin'],
+});
 
 const components = {
   h1: (props: any) => <HeadingLink variant="title" as="h1" {...props} />,
@@ -51,6 +49,7 @@ const components = {
         boxShadow:
           '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
       }}
+      className={props.className.split(' ').concat([fira.className].join(' '))}
       {...props}
     />
   ),
