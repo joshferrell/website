@@ -21,17 +21,23 @@ const About = () => (
     />
     <div style={{ display: 'flex', gap: '1.5rem', flexDirection: 'column' }}>
       <Box as="p" variant="sectionTitle">
-        I am a software engineer who is an expert at building scalable software
-        solutions for startups and large enterprises. I have built design
-        systems for GoodLeap, the largest solar financer in the US and
-        Confluent, a publicly funded company building event-driven architecture.
+        Hey there! I&apos;m a software engineer with a decade of experience in
+        creating beautiful, accessible, and user-focused design systems and
+        front-end solutions.
       </Box>
       <p>
-        Throughout my career, I have worked with a wide range of technologies
-        and platforms including: JavaScript, React, GIS software, image
-        rendering, and event-based architecture. I have a deep understanding of
-        software development methodologies, including Agile and Scrum, and have
-        led large-scale development projects from concept to delivery.
+        My journey began in print design, which allowed me to sharpen my design
+        sills and develop an appreciation for design craft and details. As I got
+        deeper into design, I found that I really loved web design and began
+        designing digital experiences.
+      </p>
+      <p>
+        At some point, I began building those experiences, and as my passion for
+        development grew, I delved deep into a diverse range of technologies
+        including JavaScript, GIS software, image rendering, image proofing,
+        event-based architecture, and React.js. I deeply enjoy building
+        user-friendly solutions that not only meet, but surpass the expectations
+        of clients and end-users.
       </p>
 
       <aside
@@ -50,15 +56,17 @@ const About = () => (
       </aside>
 
       <p>
-        In addition to my technical skills, I possess excellent communication
-        and leadership skills. I have a proven ability to work collaboratively
-        with cross-functional teams, and I am adept at managing and mentoring
-        junior developers.
+        Having a solid footing in both design and development, I&apos;m able to
+        seemlessly merge aesthetics with functionality, ensuring that every
+        project I&apos;m a part of is meaningfully crafted. Collaboration and
+        communication are key to my approach, and these skills have been
+        invaluation in my success as a team leader and my ability to work
+        hand-in-hand wiith cross-functional teams.
       </p>
       <p>
-        If you&apos;re interested in learning more about my experience or
-        discussing potential projects, please don&apos;t hesitate to get in
-        touch.
+        Outside of designing and coding, you can catch me trying out new recipes
+        or gaming. If you&apos;d like to collaborate, or just say hi, don&apso;t
+        hesitate to reach out!
       </p>
 
       <div style={{ marginTop: '1em' }}>
