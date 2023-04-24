@@ -34,7 +34,9 @@ export const generateMetadata = ({ params }: PropTypes): Metadata => {
       site: '@norablindsided',
       description: blog.summary,
       images: {
-        url: blog.socialImage,
+        url: `https://joshferrell.me/og?title=${encodeURIComponent(
+          blog.title
+        )}&subtitle=${encodeURIComponent(blog.category)}`,
         alt: '',
       },
     },
@@ -46,7 +48,9 @@ export const generateMetadata = ({ params }: PropTypes): Metadata => {
       locale: 'en-US',
       images: [
         {
-          url: blog.socialImage,
+          url: `https://joshferrell.me/og?title=${encodeURIComponent(
+            blog.title
+          )}&subtitle=${encodeURIComponent(blog.category)}`,
           alt: '',
           width: 1200,
           height: 630,
