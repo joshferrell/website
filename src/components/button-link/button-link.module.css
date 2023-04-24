@@ -38,7 +38,7 @@
 }
 
 .secondary:hover {
-  border-color: var(--border-accent);
+  border-color: var(--border-highlight);
   color: var(--text-primary);
 }
 

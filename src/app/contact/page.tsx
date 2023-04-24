@@ -23,7 +23,15 @@ const Contact = () => {
       title="Get in touch"
       subtitle="I'm open to new opportunities! Let's work together to bring your project to life."
     >
-      <Card variant="callout">
+      <Card
+        variant="callout"
+        style={{
+          display: 'flex',
+          flexFlow: 'column nowrap',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
         <ProfileImage size={120} />
         <header style={{ textAlign: 'center' }}>
           <Box as="h2" variant="subtitle" style={{ marginBottom: '.35rem' }}>
