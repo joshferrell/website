@@ -29,8 +29,10 @@ const NotFound = () => (
           marginTop: '2.5rem',
         }}
       >
-        <ButtonLink href="/">Go back home </ButtonLink>
-        <ButtonLink variant="secondary" href="/contact">
+        <ButtonLink isExternal href="/">
+          Go back home{' '}
+        </ButtonLink>
+        <ButtonLink isExternal variant="secondary" href="/contact">
           Contact me
           <ArrowRight
             style={{
