@@ -18,6 +18,7 @@ const OpenGraphImage = ({ title, subtitle }: PropTypes) => (
       paddingLeft: '64px',
       backgroundColor: '#0d0d0d',
       gap: '50px',
+      fontFamily: '"Manrope"',
       paddingTop: '130px',
     }}
   >
@@ -68,11 +69,18 @@ const OpenGraphImage = ({ title, subtitle }: PropTypes) => (
       }}
     >
       <div
-        style={{ fontSize: 24, textTransform: 'uppercase', color: '#d7d5d8' }}
+        style={{
+          fontSize: 24,
+          fontWeight: 'bold',
+          textTransform: 'uppercase',
+          color: '#d7d5d8',
+        }}
       >
         {subtitle}
       </div>
-      <div>{title}</div>
+      <div style={{ fontFamily: '"Manrope-bold"', maxWidth: 1000 }}>
+        {title}
+      </div>
     </div>
     <div
       style={{
@@ -80,11 +88,15 @@ const OpenGraphImage = ({ title, subtitle }: PropTypes) => (
         alignItems: 'flex-start',
         flexDirection: 'column',
         fontSize: 40,
-        paddingTop: '80px',
+        fontFamily: '"Manrope-bold"',
+        fontWeight: 700,
+        paddingTop: '90px',
       }}
     >
       <div>Josh Ferrell</div>
-      <div style={{ fontSize: 30, color: '#60a5fa' }}>joshferrell.me</div>
+      <div style={{ fontSize: 30, fontFamily: '"Manrope"', color: '#60a5fa' }}>
+        https://joshferrell.me
+      </div>
     </div>
   </div>
 );
