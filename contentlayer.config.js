@@ -47,11 +47,6 @@ export const Blog = defineDocumentType(() => ({
       description: 'Image of post',
       required: true,
     },
-    socialImage: {
-      type: 'string',
-      description: 'Social image of post',
-      required: true,
-    },
     summary: {
       type: 'string',
       description: 'A brief summary of the post',
@@ -99,11 +94,6 @@ export const Work = defineDocumentType(() => ({
     published: {
       type: 'boolean',
       description: 'Is the article ready to be listed',
-      required: true,
-    },
-    socialImage: {
-      type: 'string',
-      description: 'Social image of post',
       required: true,
     },
     category: {
