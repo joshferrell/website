@@ -5,7 +5,6 @@ import type { Metadata } from 'next';
 import { Box } from '~/components/box';
 import { Link } from '~/components/link';
 import './globals.css';
-import './tmp.css';
 
 const manrope = Manrope({
   weight: 'variable',
