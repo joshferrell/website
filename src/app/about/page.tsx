@@ -27,7 +27,7 @@ const About = () => (
       </Box>
       <p>
         My journey began in print design, which allowed me to sharpen my design
-        sills and develop an appreciation for design craft and details. As I got
+        skills and develop an appreciation for design craft and details. As I got
         deeper into design, I found that I really loved web design and began
         designing digital experiences.
       </p>
