@@ -23,6 +23,33 @@ export const metadata: Metadata = {
   description:
     'Staff software engineer with 10+ years of experience and expertise in React.js, TypeScript, and CSS. Follow blog for design system and JavaScript news.',
   keywords: 'Design Systems, React, Software Engineer, Typescript, Javascript',
+  manifest: '/site.webmanifest',
+  themeColor: '#0d0d0d',
+  icons: [
+    {
+      url: '/favicon.ico',
+      rel: 'shortcut icon',
+      type: 'image/x-icon',
+    },
+    {
+      url: '/favicon-32x32.png',
+      type: 'image/png',
+      sizes: '32x32',
+      href: '/favicon-32x32.png',
+    },
+    {
+      url: '/favicon-16x16.png',
+      type: 'image/png',
+      sizes: '16x16',
+      href: '/favicon-16x16.png',
+    },
+    {
+      url: '/apple-touch-icon.png',
+      type: 'image/png',
+      sizes: '180x180',
+      rel: 'apple-touch-icon',
+    },
+  ],
   twitter: {
     card: 'summary_large_image',
     title: 'Josh Ferrell | Design Systems and Front-end Technical Lead',
